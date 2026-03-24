@@ -3,7 +3,7 @@
     "description": "Joshi Management Consultancy website backend",
     "license": "proprietary",
     "require": {
-        "phpoffice/phpspreadsheet": "^5.3",
+        "phpoffice/phpspreadsheet": "^1.29",
         "vlucas/phpdotenv": "^5.5",
         "ezyang/htmlpurifier": "^4.16"
     }
