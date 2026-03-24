@@ -6,6 +6,11 @@
     <meta name="description" content="AI and automation solutions for law firms, accounting practices, and consulting companies. Automate document review, client intake, knowledge management, and reporting.">
     <meta name="keywords" content="AI law firms, accounting automation, consulting AI, document review automation, client intake automation, knowledge management AI, professional services technology">
     <meta name="author" content="Joshi Management Consultancy">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joshimc.com/professional-services">
+    <meta property="og:title" content="AI Solutions for Professional Services | Joshi Management Consultancy">
+    <meta property="og:description" content="AI and automation for law firms, accounting practices, and consulting companies. Automate document review, client intake, and reporting — deployed in 90 days.">
+    <meta property="og:image" content="https://joshimc.com/og-image.jpg">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>AI Solutions for Professional Services | Joshi Management Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +19,11 @@
     <link rel="stylesheet" href="/css/main-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --accent-green: #34d399;
+            --accent-red: #f87171;
+            --accent-purple-light: #c084fc;
+        }
         .page-hero {
             padding-top: 140px !important;
             padding-bottom: 60px !important;
@@ -41,7 +51,7 @@
             font-family: var(--font-display);
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #c084fc;
+            color: var(--accent-purple-light);
             margin-bottom: 1.5rem;
         }
 
@@ -95,8 +105,8 @@
             border-radius: 20px;
             display: inline-block;
         }
-        .before-card .ba-label { background: rgba(239, 68, 68, 0.15); color: #f87171; }
-        .after-card .ba-label { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .before-card .ba-label { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .after-card .ba-label { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
         .ba-list { list-style: none; padding: 0; margin: 0; }
         .ba-list li {
             padding: 0.65rem 0;
@@ -110,8 +120,8 @@
         }
         .ba-list li:last-child { border-bottom: none; }
         .ba-icon { flex-shrink: 0; margin-top: 2px; font-style: normal; }
-        .before-card .ba-icon { color: #f87171; }
-        .after-card .ba-icon { color: #34d399; }
+        .before-card .ba-icon { color: var(--accent-red); }
+        .after-card .ba-icon { color: var(--accent-green); }
 
         .use-cases-grid {
             display: grid;
@@ -133,7 +143,7 @@
             border: 1px solid rgba(147, 51, 234, 0.3);
             border-radius: 20px;
             font-size: 0.78rem;
-            color: #c084fc;
+            color: var(--accent-purple-light);
             font-weight: 600;
             font-family: var(--font-display);
         }
@@ -184,6 +194,7 @@
             .use-cases-grid { grid-template-columns: 1fr; }
             .use-cases-grid > * { grid-column: auto !important; }
             .cta-box { padding: 3rem 1.5rem; }
+            .case-study-grid { grid-template-columns: 1fr !important; }
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HH2RHZLZ7"></script>
@@ -231,7 +242,7 @@
         <div class="container">
             <div class="industry-badge">⚖️ Professional Services</div>
             <h1>AI Solutions for <span class="gradient-text">Law Firms, Accounting Practices, and Consulting Companies</span></h1>
-            <p class="hero-subtitle">Professional services firms sell expertise, not hours. Yet most firms have their highest-paid people spending significant time on document review, data entry, and administrative coordination. We build AI and automation solutions that handle the repetitive work so your team can focus on the advisory and strategic work clients actually pay for.</p>
+            <p class="hero-subtitle">Professional services firms sell expertise, not hours. Yet most firms have their highest-paid people spending significant time on document review, data entry, and administrative coordination. We build AI and automation solutions that handle the repetitive work so your team can focus on the advisory and strategic work clients actually pay for. Client confidentiality and professional conduct standards are built into every workflow we design.</p>
             <div class="hero-buttons">
                 <a href="contact" class="btn btn-primary">Book a Free Consultation</a>
                 <a href="services" class="btn btn-secondary">See Our Solutions</a>
@@ -410,6 +421,92 @@
         </div>
     </section>
 
+    <!-- CLIENT SUCCESS STORY (PLACEHOLDER) -->
+    <!-- TODO: Replace placeholder content with real case study when available -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Story</h2>
+                <p>What results look like in practice</p>
+            </div>
+            <div class="glass-card" style="padding: 2.5rem; max-width: 800px; margin: 0 auto;">
+                <div class="industry-badge" style="margin-bottom: 1.5rem;">⚖️ Professional Services</div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;" class="case-study-grid">
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-cyan); margin-bottom: 0.5rem;">The Challenge</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">[DESCRIBE CLIENT SITUATION — e.g., "A 15-person accounting practice was spending 3–4 hours per client onboarding on manual document collection, verification, and CRM entry"]</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-purple); margin-bottom: 0.5rem;">What We Built</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">[DESCRIBE SOLUTION — e.g., "Automated client intake workflow with AI-powered document extraction and direct CRM integration"]</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-green); margin-bottom: 0.5rem;">The Result</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">[QUANTIFIED OUTCOME — e.g., "Reduced onboarding time from 4 hours to 30 minutes per client — freeing 12+ hours per week across the team"]</p>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">— [COMPANY TYPE], [CITY], [YEAR]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Questions About AI for Professional Services</h2>
+                <p>Straight answers for law firms, accounting practices, and consulting companies</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        Can AI assist with client intake without creating a compliance risk?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Yes — and compliance is a core design constraint, not an afterthought. We build intake workflows with consent management, data minimization, and audit trails built in from the start. Every automated step is documented and human-reviewable, so your team and your regulators can see exactly what happened and when.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        How do you handle confidentiality for legal or financial documents?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Client documents stay within your controlled environment or Canadian-compliant infrastructure. We never route sensitive materials through third-party tools without explicit client approval, and we design access controls at the role level so only authorized staff can access specific document types. We treat your clients' confidentiality as seriously as you do.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        Will this work with our existing practice management software (Clio, QuickBooks, etc.)?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">We have experience integrating with Clio, QuickBooks, Xero, Sage, NetSuite, and most common practice management platforms used by Canadian professional services firms. If your platform has an API, we can connect to it. We confirm integration feasibility in the discovery phase before any build work starts.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        How do we handle the learning curve for staff who aren't tech-savvy?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">We design every solution with adoption as a primary constraint — that means simple interfaces, clear workflows, and training materials written for non-technical users. Training is included in every engagement, and we stay engaged post-deployment to handle any questions that come up in real use.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        What does a typical engagement look like for a 10-person firm?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">A typical first engagement for a firm your size focuses on one high-impact area — usually client intake, document processing, or reporting. We spend 2 weeks in discovery, 1 week on solution design, and 4–6 weeks building and deploying. You have a live, production solution in under 90 days. Most firms identify their second opportunity before the first deployment closes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="section">
         <div class="container">
@@ -543,6 +640,25 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var icon = this.querySelector('.faq-icon');
+                var isOpen = this.getAttribute('aria-expanded') === 'true';
+                document.querySelectorAll('.faq-question').forEach(function(other) {
+                    other.setAttribute('aria-expanded', 'false');
+                    other.querySelector('.faq-icon').textContent = '+';
+                    other.nextElementSibling.style.maxHeight = '0';
+                });
+                if (!isOpen) {
+                    this.setAttribute('aria-expanded', 'true');
+                    icon.textContent = '×';
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
         });

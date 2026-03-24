@@ -6,6 +6,11 @@
     <meta name="description" content="AI and automation solutions for banks, insurance companies, wealth management firms, and financial advisors. Reduce compliance risk, accelerate processing, and serve clients better.">
     <meta name="keywords" content="AI financial services, banking automation, KYC AML automation, fraud detection AI, wealth management AI, insurance claims automation, compliance technology">
     <meta name="author" content="Joshi Management Consultancy">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joshimc.com/financial-services">
+    <meta property="og:title" content="AI Solutions for Financial Services | Joshi Management Consultancy">
+    <meta property="og:description" content="AI and automation for banks, wealth management firms, and financial advisors. Reduce compliance risk, automate KYC and AML processes — deployed in 90 days.">
+    <meta property="og:image" content="https://joshimc.com/og-image.jpg">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>AI Solutions for Financial Services | Joshi Management Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +19,11 @@
     <link rel="stylesheet" href="/css/main-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --accent-green: #34d399;
+            --accent-red: #f87171;
+            --accent-purple-light: #c084fc;
+        }
         .page-hero {
             padding-top: 140px !important;
             padding-bottom: 60px !important;
@@ -41,7 +51,7 @@
             font-family: var(--font-display);
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #c084fc;
+            color: var(--accent-purple-light);
             margin-bottom: 1.5rem;
         }
 
@@ -95,8 +105,8 @@
             border-radius: 20px;
             display: inline-block;
         }
-        .before-card .ba-label { background: rgba(239, 68, 68, 0.15); color: #f87171; }
-        .after-card .ba-label { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .before-card .ba-label { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .after-card .ba-label { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
         .ba-list { list-style: none; padding: 0; margin: 0; }
         .ba-list li {
             padding: 0.65rem 0;
@@ -110,8 +120,8 @@
         }
         .ba-list li:last-child { border-bottom: none; }
         .ba-icon { flex-shrink: 0; margin-top: 2px; font-style: normal; }
-        .before-card .ba-icon { color: #f87171; }
-        .after-card .ba-icon { color: #34d399; }
+        .before-card .ba-icon { color: var(--accent-red); }
+        .after-card .ba-icon { color: var(--accent-green); }
 
         .use-cases-grid {
             display: grid;
@@ -133,7 +143,7 @@
             border: 1px solid rgba(147, 51, 234, 0.3);
             border-radius: 20px;
             font-size: 0.78rem;
-            color: #c084fc;
+            color: var(--accent-purple-light);
             font-weight: 600;
             font-family: var(--font-display);
         }
@@ -199,6 +209,7 @@
             .use-cases-grid { grid-template-columns: 1fr; }
             .use-cases-grid > * { grid-column: auto !important; }
             .cta-box { padding: 3rem 1.5rem; }
+            .case-study-grid { grid-template-columns: 1fr !important; }
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HH2RHZLZ7"></script>
@@ -246,7 +257,7 @@
         <div class="container">
             <div class="industry-badge">🏦 Financial Services</div>
             <h1>AI Solutions for <span class="gradient-text">Financial Services Firms</span></h1>
-            <p class="hero-subtitle">Banks, insurance companies, wealth management firms, and financial advisors operate under intense regulatory scrutiny while processing massive volumes of transactions and client data. We build AI and automation solutions that reduce compliance risk, accelerate processing, and give your team the intelligence they need to serve clients better and grow faster.</p>
+            <p class="hero-subtitle">Banks, insurance companies, wealth management firms, and financial advisors operate under intense regulatory scrutiny while processing massive volumes of transactions and client data. We build AI and automation solutions that reduce compliance risk, accelerate processing, and give your team the intelligence they need to serve clients better and grow faster. Every solution we deploy includes compliance documentation, human oversight checkpoints, and clear audit trails.</p>
             <div class="hero-buttons">
                 <a href="contact" class="btn btn-primary">Book a Free Consultation</a>
                 <a href="services" class="btn btn-secondary">See Our Solutions</a>
@@ -427,6 +438,92 @@
         </div>
     </section>
 
+    <!-- CLIENT SUCCESS STORY (PLACEHOLDER) -->
+    <!-- TODO: Replace placeholder content with real case study when available -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Story</h2>
+                <p>What results look like in practice</p>
+            </div>
+            <div class="glass-card" style="padding: 2.5rem; max-width: 800px; margin: 0 auto;">
+                <div class="industry-badge" style="margin-bottom: 1.5rem;">🏦 Financial Services</div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;" class="case-study-grid">
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-cyan); margin-bottom: 0.5rem;">The Challenge</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">[DESCRIBE CLIENT SITUATION — e.g., "A regional wealth management firm was spending 6+ hours per week per advisor on manual KYC data collection and compliance reporting"]</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-purple); margin-bottom: 0.5rem;">What We Built</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">[DESCRIBE SOLUTION — e.g., "Automated KYC data extraction and compliance reporting workflow integrated with their CRM and regulatory reporting system"]</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-green); margin-bottom: 0.5rem;">The Result</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">[QUANTIFIED OUTCOME — e.g., "Reduced compliance prep time by 70% per advisor, freeing 20+ hours per week across the team while improving audit-readiness"]</p>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">— [COMPANY TYPE], [CITY], [YEAR]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Questions About AI for Financial Services</h2>
+                <p>Straight answers for banks, wealth managers, and financial advisors</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        How do you ensure compliance with FINTRAC and provincial regulations?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Every solution we build for financial services clients includes compliance documentation from the start — data handling policies, audit trail architecture, and human review checkpoints at key decision points. We design workflows to support FINTRAC reporting requirements and provincial securities regulations, and we document every automated step so your compliance team can review and approve before go-live.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        Can AI assist with KYC and AML processes?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Yes. We build AI solutions that automate the data collection and initial review stages of KYC, flag anomalies for human review in AML workflows, and prepare structured reports for your compliance team. The human judgment stays in the loop — AI handles the data gathering and pattern flagging that currently consumes staff hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        What data security standards do your solutions meet?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">We build on Canadian-compliant cloud infrastructure with encryption in transit and at rest, role-based access controls, and full audit logging. We work within your existing security framework rather than asking you to adapt to ours. Security architecture is reviewed with your IT and compliance teams before deployment.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        How do you handle audit trails for AI-assisted decisions?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Every automated decision in our solutions is logged with a timestamp, the input data used, the rule or model applied, and the output. For regulated decisions, we build in mandatory human review gates — AI makes a recommendation, a qualified team member approves it. Your audit trail shows both what AI flagged and what your team decided.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        How long before we see ROI on a compliance automation or fraud detection project?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Compliance automation projects typically show positive ROI within 3–6 months — the staff time savings alone are usually enough to cover the engagement cost. Fraud detection and risk monitoring projects often have a faster payback depending on the volume of transactions reviewed. The free assessment will model this specifically for your transaction volumes and team size.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="section">
         <div class="container">
@@ -560,6 +657,25 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var icon = this.querySelector('.faq-icon');
+                var isOpen = this.getAttribute('aria-expanded') === 'true';
+                document.querySelectorAll('.faq-question').forEach(function(other) {
+                    other.setAttribute('aria-expanded', 'false');
+                    other.querySelector('.faq-icon').textContent = '+';
+                    other.nextElementSibling.style.maxHeight = '0';
+                });
+                if (!isOpen) {
+                    this.setAttribute('aria-expanded', 'true');
+                    icon.textContent = '×';
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
         });

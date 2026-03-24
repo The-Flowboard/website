@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enterprise AI implementation and intelligent automation at scale. Joshi Management Consultancy delivers measurable operational efficiency, reduced overhead, and strategic AI transformation for complex organizations.">
-    <meta name="keywords" content="AI, automation, business transformation, AI implementation, lead generation automation, customer service automation, business intelligence, marketing automation">
+    <meta name="description" content="JMC helps Canadian SMEs and mid-market businesses deploy AI and automation that saves 10–20 hours per week. Free AI Readiness Assessment included.">
+    <meta name="keywords" content="AI consulting Canada, automation consulting, AI implementation, business automation, AI readiness assessment, SME AI consulting, mid-market AI">
     <meta name="author" content="Joshi Management Consultancy">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Joshi Management Consultancy | AI, Automation & Business Transformation</title>
+    <title>AI Consulting & Automation for Canadian Businesses | Joshi Management Consultancy</title>
      <!-- Auto-upload test - Feb 1, 2026 -->
     <!-- Preconnect to Google Fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +19,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://joshimc.com/">
-    <meta property="og:title" content="Joshi Management Consultancy | AI, Automation & Business Transformation">
-    <meta property="og:description" content="Enterprise AI implementation and intelligent automation at scale. Drive measurable operational efficiency, cost reduction, and strategic transformation across your organization.">
+    <meta property="og:title" content="AI Consulting & Automation for Canadian Businesses | Joshi Management Consultancy">
+    <meta property="og:description" content="Businesses that adopt AI and automation gain 15–20% more output from the same team. JMC finds those gains in your operations and deploys the solution in 90 days.">
     <meta property="og:image" content="https://joshimc.com/og-image.jpg">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://joshimc.com/">
-    <meta property="twitter:title" content="Joshi Management Consultancy | AI, Automation & Business Transformation">
-    <meta property="twitter:description" content="Enterprise AI implementation and intelligent automation at scale. Drive measurable operational efficiency, cost reduction, and strategic transformation across your organization.">
+    <meta property="twitter:title" content="AI Consulting & Automation for Canadian Businesses | Joshi Management Consultancy">
+    <meta property="twitter:description" content="Businesses that adopt AI and automation gain 15–20% more output from the same team. JMC finds those gains in your operations and deploys the solution in 90 days.">
     <meta property="twitter:image" content="https://joshimc.com/og-image.jpg">
     
     <link rel="stylesheet" href="/css/main-styles.css">
@@ -35,6 +35,11 @@
 
     <!-- Page-specific styles -->
     <style>
+        :root {
+            --color-youtube-red: #FF0000;
+            --blog-fallback-gradient: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+        }
+
         /* Add spacing between hero and first section for better visual cohesion */
         .hero + .section {
             padding-top: 250px !important;
@@ -49,6 +54,16 @@
         /* Reduce padding after "Our Services" section (section 2) */
         .section:nth-of-type(2) {
             padding-bottom: 45px !important;
+        }
+
+        /* Stats bar - responsive */
+        .stats-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
         }
 
         /* Center text and icons in service cards */
@@ -134,13 +149,38 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Smarter Systems. Less Manual Work. <span class="gradient-text">Real Results.</span></h1>
-                <p class="hero-subtitle">We design and deploy AI solutions, automation agents, and integrated business systems that eliminate repetitive work, connect your tools, and give your team the data they need to make better decisions faster.</p>
+                <p class="hero-subtitle">Businesses that adopt AI and automation gain 15–20% more output from the same team — and pull ahead of competitors still doing things manually. We show you exactly where those gains are in your operations, then build the solution and deploy it in 90 days.</p>
                 <div class="hero-buttons">
                     <a href="services.html" class="btn btn-primary">See Our Solutions</a>
                     <a href="assessment.html" class="btn btn-secondary">Take the Free AI Readiness Assessment</a>
                 </div>
             </div>
             <div class="hero-visual"></div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF BAR -->
+    <!-- TODO: Replace [X], [Y], [Z] placeholders with real numbers when available -->
+    <section class="section" style="padding-bottom: 0 !important;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto;" class="stats-grid">
+                <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-display); background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1;">[X]+</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.4;">Businesses Transformed</div>
+                </div>
+                <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-display); background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1;">[Y,000]+</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.4;">Hours Saved Annually</div>
+                </div>
+                <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-display); background: linear-gradient(135deg, var(--accent-blue), var(--accent-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1;">[Z]+</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.4;">Successful Deployments</div>
+                </div>
+                <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-display); background: linear-gradient(135deg, var(--accent-green), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1;">90</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.4;">Days Average to Live Solution</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -283,8 +323,11 @@
                 <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-secondary);">
                     That is what we do differently. We don't lead with platforms or buzzwords. We start by understanding your workflows, your team's daily friction points, and what "success" actually looks like for your business. Then we build and deploy solutions that fit cleanly enough into your operations that people actually use them.
                 </p>
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    We also believe AI should be implemented carefully. Every solution we deploy includes human oversight design, rollback procedures, and clear escalation rules — so your team is always in control. No black-box systems. No vendor lock-in.
+                </p>
                 <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 0; color: var(--text-secondary);">
-                    We work with companies across real estate, professional services, and financial services because those industries share something in common: talented people spending too much time on work that doesn't require their expertise.
+                    We work with Canadian SMEs and mid-market firms across real estate, professional services, and financial services — industries where talented people spend too much time on work that doesn't require their expertise. We understand the compliance environment, the talent constraints, and the competitive pressures specific to businesses operating in Canada.
                 </p>
             </div>
         </div>
@@ -305,6 +348,127 @@
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="blog" class="btn btn-secondary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (PLACEHOLDER) -->
+    <!-- TODO: Replace placeholder content with real client testimonials when available -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Real results from real businesses across Canada</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem;">
+                    <div style="color: var(--accent-cyan); font-size: 1.75rem; line-height: 1;">"</div>
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); font-style: italic;">[TESTIMONIAL QUOTE — e.g., "JMC cut our invoice processing time from 3 days to 4 hours. Our team now focuses on clients, not paperwork."]</p>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                        <div style="font-weight: 600; color: var(--text-primary);">[CLIENT NAME]</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">[TITLE] at [COMPANY] · [INDUSTRY]</div>
+                    </div>
+                </div>
+                <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem;">
+                    <div style="color: var(--accent-cyan); font-size: 1.75rem; line-height: 1;">"</div>
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); font-style: italic;">[TESTIMONIAL QUOTE — e.g., "We saved 12 hours per week on reporting alone. The ROI was clear within the first 30 days."]</p>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                        <div style="font-weight: 600; color: var(--text-primary);">[CLIENT NAME]</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">[TITLE] at [COMPANY] · [INDUSTRY]</div>
+                    </div>
+                </div>
+                <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem;">
+                    <div style="color: var(--accent-cyan); font-size: 1.75rem; line-height: 1;">"</div>
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); font-style: italic;">[TESTIMONIAL QUOTE — e.g., "The implementation was smooth and the team was with us every step of the way. We're already planning phase two."]</p>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                        <div style="font-weight: 600; color: var(--text-primary);">[CLIENT NAME]</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">[TITLE] at [COMPANY] · [INDUSTRY]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Common Questions</h2>
+                <p>Answers to what most business owners ask before getting started</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;" id="faqAccordion">
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        Is AI actually the right investment for a business our size?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Most of our clients are businesses with 5 to 100 employees — the exact size where manual processes hurt most and off-the-shelf software rarely fits. If your team spends more than 5 hours a week on repetitive data work, document handling, or manual reporting, AI will pay for itself quickly. The free assessment takes 10 minutes and tells you exactly where the return is.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        How long does implementation take before we see results?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Our standard timeline is 90 days from first conversation to a live solution in your operations. Weeks 1 and 2 are discovery, weeks 3 and 4 are solution design, and months 2 and 3 are build and deployment. Most clients see measurable time savings within the first 30 days after go-live.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        We don't have clean data. Does that disqualify us?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Not at all. Most of our clients come to us with data in spreadsheets, disconnected systems, or no structured data at all. Data cleanup and structuring is part of our discovery phase — we handle it as part of the engagement, not as a prerequisite.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        What does an engagement typically cost?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Scope varies based on what we build, but most first engagements fall in the range of a single hire's monthly salary — with the difference that AI works 24 hours a day and scales without additional cost. We scope every project in the solution design phase before you commit to anything, so there are no surprises.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        How is this different from just buying off-the-shelf AI tools?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">Off-the-shelf tools are built for general use cases — your business has specific workflows, specific data, and specific constraints. We build solutions around how your operations actually work, then integrate them with the tools you already use. The result is adoption that sticks, not software that collects dust.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        Will this disrupt our team during the rollout?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">We design every implementation to run alongside your existing operations, not replace them overnight. Your team keeps working the way they work today while we build and test in parallel. We only cut over when everything is ready — and we stay on-site (virtually) through go-live to handle anything that comes up.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        What happens after deployment — are we on our own?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">No. Our fourth phase is Train, Measure and Scale — we train your team on every tool we deploy, track performance against agreed KPIs, and stay engaged to identify the next opportunity. Most clients move from their first solution to a second within 60 to 90 days.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" style="margin-bottom: 1rem; overflow: hidden;">
+                    <button class="faq-question" aria-expanded="false" style="width: 100%; text-align: left; background: none; border: none; padding: 1.5rem; font-size: 1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--font-body);">
+                        Do we need an IT department or technical staff to make this work?
+                        <span class="faq-icon" style="flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent-cyan);">+</span>
+                    </button>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease;">
+                        <p style="padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">No internal IT team required. We handle all technical setup, integration, and maintenance. Your team needs to understand how to use the tools we build — which is why training and documentation are included in every engagement. If something breaks after deployment, you call us, not a help desk.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -574,10 +738,8 @@
         }
 
         // ===== ANALYTICS READY =====
-        // Add your analytics tracking code here
         function trackEvent(eventName, eventData) {
-            // Example: gtag('event', eventName, eventData);
-            console.log('Event tracked:', eventName, eventData);
+            gtag('event', eventName, eventData);
         }
 
         // Track CTA clicks
@@ -742,7 +904,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Build the blog card HTML
                         article.innerHTML = `
-                            <div class="blog-image" style="background: linear-gradient(135deg, #a855f7, #06b6d4);">
+                            <div class="blog-image" style="background: var(--blog-fallback-gradient);">
                                 ${post.featured_image ?
                                     `<img src="${post.featured_image}" alt="${post.title}" style="width: 100%; height: 100%; object-fit: cover;">` :
                                     emoji
@@ -784,6 +946,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Load blog posts when page loads
         document.addEventListener('DOMContentLoaded', loadHomeBlogPosts);
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var icon = this.querySelector('.faq-icon');
+                var isOpen = this.getAttribute('aria-expanded') === 'true';
+
+                // Close all others
+                document.querySelectorAll('.faq-question').forEach(function(other) {
+                    other.setAttribute('aria-expanded', 'false');
+                    other.querySelector('.faq-icon').textContent = '+';
+                    other.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    other.nextElementSibling.style.maxHeight = '0';
+                });
+
+                // Toggle current
+                if (!isOpen) {
+                    this.setAttribute('aria-expanded', 'true');
+                    icon.textContent = '×';
+                    icon.style.transform = 'rotate(0deg)';
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
 
         // ===== OPTIMIZED MOUSE-REACTIVE SHADER =====
         // Uses CSS custom properties instead of recreating style elements (60x/sec performance gain)
@@ -876,7 +1063,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span aria-hidden="true">&times;</span>
         </button>
         <div class="modal-header">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16" style="color: #FF0000;" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16" style="color: var(--color-youtube-red);" aria-hidden="true">
                 <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
             </svg>
             <h2 id="modalTitle" style="margin-top: 1.5rem;">YouTube Channel Coming Soon!</h2>
