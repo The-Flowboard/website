@@ -1,4 +1,7 @@
 {
+    "name": "jmc/website",
+    "description": "Joshi Management Consultancy website backend",
+    "license": "proprietary",
     "require": {
         "phpoffice/phpspreadsheet": "^5.3",
         "vlucas/phpdotenv": "^5.5",
