@@ -1,5 +1,5 @@
 # JMC Website
-**Last Updated:** March 23, 2026 | **Version:** Production v1.3
+**Last Updated:** March 23, 2026 | **Version:** Production v1.3 + Version Control
 
 ---
 
@@ -9,7 +9,8 @@
 **Backend:** PHP 7.4+, MySQLi, PHP native sessions
 **Database:** MySQL/MariaDB — db `jmc_website`, user `jmc_user`, host `localhost`, charset `utf8mb4`
 **Automation:** n8n at `https://n8n.joshimc.com`
-**Server:** Ubuntu/Apache · SFTP auto-deploy via VS Code extension · `/var/www/html/`
+**Server:** Ubuntu/Apache · Git + GitHub Actions CI/CD · `/var/www/html/`
+**Local Dev:** Docker (PHP 7.4 + MySQL 8.0) at `http://localhost:8080`
 **Dependencies:** PHPOffice/PhpSpreadsheet ^5.3 (Composer) · Google Fonts CDN · Font Awesome 6.4.0 CDN · GA4 `G-5HH2RHZLZ7`
 
 ---
@@ -28,6 +29,9 @@ js/ / css/     ← assessment wizard JS + CSS, cookie consent
 images/blog/   ← uploaded blog images (.htaccess blocks PHP)
 database/      ← SQL schema + seed files
 vendor/        ← Composer packages
+docker/        ← Docker config (php/Dockerfile, mysql/init.sql)
+Makefile       ← development + deployment commands
+.env.docker    ← local dev credentials (committed, no prod secrets)
 ```
 
 Key flows:
@@ -38,20 +42,45 @@ Key flows:
 
 ---
 
+## Development Workflow
+
+```bash
+# 1. Start local environment (Docker — PHP + MySQL at localhost:8080)
+make up
+
+# 2. Edit files, test at http://localhost:8080
+
+# 3. Run test gate (PHP syntax + security audit)
+make test
+
+# 4. Commit and deploy (deploy enforces test first)
+git add .
+git commit -m "feat: describe your change"
+make deploy          # runs test → git push → GitHub Actions CI/CD
+
+# Stop local environment
+make down
+```
+
+**Emergency hotfix** (bypasses GitHub Actions — use only if CI is unavailable):
+```bash
+make deploy-hotfix
+```
+
 ## Key Commands
 
 ```bash
-# Manual deploy (local → server)
-scp -r /Users/rushabhjoshi/Desktop/jmc-website/* ubuntu@167.114.97.221:/var/www/html/
+# Local Docker database
+make db-shell        # MySQL shell in Docker
+make db-import       # Re-import schema from docker/mysql/init.sql
 
-# Fix permissions after deploy
-sudo chown -R www-data:www-data /var/www/html
-sudo chmod 775 /var/www/html/images/blog/
+# Production server — SSH
+ssh ubuntu@167.114.97.221
 
-# Check webhook queue
+# Check webhook queue (on server)
 mysql -u jmc_user -p jmc_website -e "SELECT status, COUNT(*) FROM webhook_queue GROUP BY status;"
 
-# Monitor webhook cron logs
+# Monitor webhook cron logs (on server)
 tail -f /var/log/jmc_webhooks.log
 ```
 

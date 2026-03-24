@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -30,7 +30,7 @@ jobs:
       - name: PHP Syntax Check
         run: |
           echo "Checking PHP syntax for all PHP files..."
-          find . -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
+          find . -name "*.php" -not -path "./vendor/*" -not -path "./docker/*" -print0 | xargs -0 -n1 php -l
 
       - name: Check for security vulnerabilities
         run: |
@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -61,7 +61,26 @@ jobs:
       - name: Deploy via rsync
         uses: burnett01/rsync-deployments@6.0.0
         with:
-          switches: -avzr --delete --exclude='.git' --exclude='.github' --exclude='.env' --exclude='vendor' --exclude='node_modules' --exclude='.DS_Store' --exclude='.vscode' --exclude='*.md' --exclude='database/' --exclude='n8n/' --exclude='CLAUDE.md' --exclude='comprehensive_review_2026.md' --exclude='PROGRESS_TRACKER.md'
+          switches: >-
+            -avzr --delete
+            --exclude='.git'
+            --exclude='.github'
+            --exclude='.env'
+            --exclude='.env.docker'
+            --exclude='vendor'
+            --exclude='node_modules'
+            --exclude='.DS_Store'
+            --exclude='.vscode'
+            --exclude='docker'
+            --exclude='docker-compose.yml'
+            --exclude='Makefile'
+            --exclude='*.md'
+            --exclude='database/'
+            --exclude='docs/'
+            --exclude='n8n/'
+            --exclude='scripts/'
+            --exclude='CLAUDE.md'
+            --exclude='*.sh'
           path: ./
           remote_path: /var/www/html/
           remote_host: ${{ secrets.DEPLOY_HOST }}
@@ -77,7 +96,7 @@ jobs:
           script: |
             cd /var/www/html
             composer install --no-dev --optimize-autoloader
-            echo "Deployment completed successfully!"
+            echo "Composer install completed"
 
       - name: Set correct permissions
         uses: appleboy/ssh-action@master
@@ -86,12 +105,11 @@ jobs:
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
-            cd /var/www/html
             sudo chown -R www-data:www-data /var/www/html
             sudo find /var/www/html -type f -exec chmod 644 {} \;
             sudo find /var/www/html -type d -exec chmod 755 {} \;
             sudo chmod 775 /var/www/html/images/blog/
-            echo "Permissions updated successfully!"
+            echo "Permissions updated"
 
       - name: Clear PHP OPcache
         uses: appleboy/ssh-action@master
@@ -101,17 +119,16 @@ jobs:
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
             sudo systemctl reload apache2 || sudo service apache2 reload
-            echo "PHP OPcache cleared successfully!"
+            echo "Apache reloaded"
 
-      - name: Deployment notification
+      - name: Deployment success
         if: success()
         run: |
-          echo "✅ Deployment to production successful!"
-          echo "🌐 Website: https://joshimc.com"
-          echo "📅 Deployed at: $(date)"
+          echo "Deployment to production successful"
+          echo "Website: https://joshimc.com"
+          echo "Deployed at: $(date)"
 
-      - name: Deployment failure notification
+      - name: Deployment failure
         if: failure()
         run: |
-          echo "❌ Deployment failed!"
-          echo "Please check the logs above for details."
+          echo "Deployment failed — check logs above"
