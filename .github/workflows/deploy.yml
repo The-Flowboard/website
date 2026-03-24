@@ -61,6 +61,14 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-dev --optimize-autoloader --prefer-dist
 
+      - name: Fix ownership before rsync
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: sudo chown -R ubuntu:ubuntu /var/www/html
+
       - name: Deploy via rsync
         uses: burnett01/rsync-deployments@6.0.0
         with:
@@ -68,6 +76,7 @@ jobs:
             -avzr --delete
             --exclude='.git'
             --exclude='.github'
+            --exclude='.claude'
             --exclude='.env'
             --exclude='.env.docker'
             --exclude='vendor'
