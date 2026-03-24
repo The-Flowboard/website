@@ -1,0 +1,117 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test & Validate
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: mysqli, gd, fileinfo
+          tools: composer
+
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader --prefer-dist
+
+      - name: PHP Syntax Check
+        run: |
+          echo "Checking PHP syntax for all PHP files..."
+          find . -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
+
+      - name: Check for security vulnerabilities
+        run: |
+          composer audit || echo "Audit check completed"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    name: Deploy to Production Server
+    environment:
+      name: production
+      url: https://joshimc.com
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: mysqli, gd, fileinfo
+          tools: composer
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader --prefer-dist
+
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@6.0.0
+        with:
+          switches: -avzr --delete --exclude='.git' --exclude='.github' --exclude='.env' --exclude='vendor' --exclude='node_modules' --exclude='.DS_Store' --exclude='.vscode' --exclude='*.md' --exclude='database/' --exclude='n8n/' --exclude='CLAUDE.md' --exclude='comprehensive_review_2026.md' --exclude='PROGRESS_TRACKER.md'
+          path: ./
+          remote_path: /var/www/html/
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Install Composer on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /var/www/html
+            composer install --no-dev --optimize-autoloader
+            echo "Deployment completed successfully!"
+
+      - name: Set correct permissions
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /var/www/html
+            sudo chown -R www-data:www-data /var/www/html
+            sudo find /var/www/html -type f -exec chmod 644 {} \;
+            sudo find /var/www/html -type d -exec chmod 755 {} \;
+            sudo chmod 775 /var/www/html/images/blog/
+            echo "Permissions updated successfully!"
+
+      - name: Clear PHP OPcache
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            sudo systemctl reload apache2 || sudo service apache2 reload
+            echo "PHP OPcache cleared successfully!"
+
+      - name: Deployment notification
+        if: success()
+        run: |
+          echo "✅ Deployment to production successful!"
+          echo "🌐 Website: https://joshimc.com"
+          echo "📅 Deployed at: $(date)"
+
+      - name: Deployment failure notification
+        if: failure()
+        run: |
+          echo "❌ Deployment failed!"
+          echo "Please check the logs above for details."

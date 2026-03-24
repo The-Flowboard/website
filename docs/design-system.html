@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMC Design System - Component Library</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Brand Colors */
+            --primary-purple: #872B97;
+            --primary-orange: #ff7130;
+            --primary-pink: #ff3c68;
+
+            /* Background Colors */
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #131318;
+            --bg-tertiary: #1a1a24;
+
+            /* Text Colors */
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-tertiary: rgba(255, 255, 255, 0.6);
+
+            /* Glass Morphism */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+            /* Typography */
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'Nunito Sans', sans-serif;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(135, 43, 151, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 113, 48, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 60, 104, 0.15) 0%, transparent 50%);
+            z-index: -1;
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Header */
+        .header {
+            padding: var(--space-xl) var(--space-lg);
+            text-align: center;
+            border-bottom: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-orange), var(--primary-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-sm);
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 140px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            justify-content: center;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .nav a:hover {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: var(--space-xl);
+            scroll-margin-top: 160px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--glass-border);
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            font-size: 1.1rem;
+        }
+
+        /* Component Card */
+        .component {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .component-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--primary-orange);
+        }
+
+        .component-demo {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-md);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .component-code {
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            overflow-x: auto;
+        }
+
+        .component-code pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+        }
+
+        /* Color Swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .color-swatch {
+            text-align: center;
+        }
+
+        .color-box {
+            height: 120px;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-sm);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-value {
+            color: var(--text-tertiary);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Typography Examples */
+        .type-example {
+            margin-bottom: var(--space-lg);
+            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+        }
+
+        .type-label {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(135, 43, 151, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 2px solid var(--primary-orange);
+            color: var(--primary-orange);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-orange);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--glass-border);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--glass-bg);
+            border-color: var(--primary-purple);
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .glass-card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: var(--space-md);
+        }
+
+        .glass-card-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .glass-card-text {
+            color: var(--text-secondary);
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(135, 43, 151, 0.2);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-radio,
+        .form-checkbox {
+            margin-right: var(--space-xs);
+            accent-color: var(--primary-purple);
+        }
+
+        /* Icons */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .icon-item {
+            text-align: center;
+            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+        }
+
+        .icon-item img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .icon-name {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-lg) var(--space-md);
+            }
+
+            .nav {
+                position: static;
+            }
+
+            .nav ul {
+                flex-direction: column;
+            }
+
+            .component-demo {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>JMC Design System</h1>
+        <p>Component Library & Style Guide</p>
+    </header>
+
+    <nav class="nav container">
+        <ul>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#cards">Cards</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#icons">Icons</a></li>
+            <li><a href="#spacing">Spacing</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Colors Section -->
+        <section id="colors" class="section">
+            <h2 class="section-title">Color Palette</h2>
+            <p class="section-description">Our brand colors create a vibrant, modern aesthetic that reflects innovation and professionalism.</p>
+
+            <div class="component">
+                <h3 class="component-title">Brand Colors</h3>
+                <div class="component-demo">
+                    <div class="color-grid" style="width: 100%;">
+                        <div class="color-swatch">
+                            <div class="color-box" style="background: #872B97;"></div>
+                            <div class="color-name">Primary Purple</div>
+                            <div class="color-value">#872B97</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background: #ff7130;"></div>
+                            <div class="color-name">Primary Orange</div>
+                            <div class="color-value">#ff7130</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background: #ff3c68;"></div>
+                            <div class="color-name">Primary Pink</div>
+                            <div class="color-value">#ff3c68</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="component-code">
+                    <pre>/* CSS Variables */
+--primary-purple: #872B97;
+--primary-orange: #ff7130;
+--primary-pink: #ff3c68;</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Background Colors</h3>
+                <div class="component-demo">
+                    <div class="color-grid" style="width: 100%;">
+                        <div class="color-swatch">
+                            <div class="color-box" style="background: #0a0a0f; border: 1px solid rgba(255,255,255,0.1);"></div>
+                            <div class="color-name">BG Primary</div>
+                            <div class="color-value">#0a0a0f</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background: #131318;"></div>
+                            <div class="color-name">BG Secondary</div>
+                            <div class="color-value">#131318</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-box" style="background: #1a1a24;"></div>
+                            <div class="color-name">BG Tertiary</div>
+                            <div class="color-value">#1a1a24</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="component-code">
+                    <pre>/* CSS Variables */
+--bg-primary: #0a0a0f;
+--bg-secondary: #131318;
+--bg-tertiary: #1a1a24;</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Text Colors</h3>
+                <div class="component-demo" style="background: var(--bg-primary);">
+                    <div class="color-grid" style="width: 100%;">
+                        <div class="color-swatch">
+                            <div style="font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--text-primary);">Primary Text</div>
+                            <div class="color-value">rgba(255, 255, 255, 1.0)</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div style="font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--text-secondary);">Secondary Text</div>
+                            <div class="color-value">rgba(255, 255, 255, 0.8)</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div style="font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--text-tertiary);">Tertiary Text</div>
+                            <div class="color-value">rgba(255, 255, 255, 0.6)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography Section -->
+        <section id="typography" class="section">
+            <h2 class="section-title">Typography</h2>
+            <p class="section-description">We use Sora for headings and display text, and Nunito Sans for body copy.</p>
+
+            <div class="component">
+                <h3 class="component-title">Font Families</h3>
+                <div class="component-demo" style="flex-direction: column; align-items: flex-start;">
+                    <div style="font-family: var(--font-display); font-size: 2rem; margin-bottom: var(--space-md);">
+                        Sora - Display Font
+                    </div>
+                    <div style="font-family: var(--font-body); font-size: 1.25rem;">
+                        Nunito Sans - Body Font
+                    </div>
+                </div>
+                <div class="component-code">
+                    <pre>/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+
+/* CSS Variables */
+--font-display: 'Sora', sans-serif;
+--font-body: 'Nunito Sans', sans-serif;</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Heading Scale</h3>
+                <div class="component-demo" style="flex-direction: column; align-items: flex-start; width: 100%;">
+                    <div class="type-example" style="width: 100%;">
+                        <div class="type-label">H1 - 3rem (48px)</div>
+                        <h1 style="font-size: 3rem; font-weight: 800; font-family: var(--font-display);">Main Page Heading</h1>
+                    </div>
+                    <div class="type-example" style="width: 100%;">
+                        <div class="type-label">H2 - 2.5rem (40px)</div>
+                        <h2 style="font-size: 2.5rem; font-weight: 700; font-family: var(--font-display);">Section Heading</h2>
+                    </div>
+                    <div class="type-example" style="width: 100%;">
+                        <div class="type-label">H3 - 2rem (32px)</div>
+                        <h3 style="font-size: 2rem; font-weight: 600; font-family: var(--font-display);">Sub-section Heading</h3>
+                    </div>
+                    <div class="type-example" style="width: 100%;">
+                        <div class="type-label">H4 - 1.5rem (24px)</div>
+                        <h4 style="font-size: 1.5rem; font-weight: 600; font-family: var(--font-display);">Component Heading</h4>
+                    </div>
+                    <div class="type-example" style="width: 100%;">
+                        <div class="type-label">Body - 1rem (16px)</div>
+                        <p style="font-size: 1rem; font-family: var(--font-body);">This is body text used for paragraphs and general content. It uses Nunito Sans for excellent readability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons Section -->
+        <section id="buttons" class="section">
+            <h2 class="section-title">Buttons</h2>
+            <p class="section-description">Button styles for different actions and states.</p>
+
+            <div class="component">
+                <h3 class="component-title">Button Variants</h3>
+                <div class="component-demo">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                </div>
+                <div class="component-code">
+                    <pre>&lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;
+&lt;button class="btn btn-outline"&gt;Outline Button&lt;/button&gt;</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Button Sizes</h3>
+                <div class="component-demo">
+                    <button class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.875rem;">Small</button>
+                    <button class="btn btn-primary">Medium (Default)</button>
+                    <button class="btn btn-primary" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">Large</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section id="cards" class="section">
+            <h2 class="section-title">Cards</h2>
+            <p class="section-description">Glass morphism cards for content containers.</p>
+
+            <div class="component">
+                <h3 class="component-title">Glass Card</h3>
+                <div class="component-demo" style="width: 100%;">
+                    <div class="glass-card" style="max-width: 400px;">
+                        <img src="../images/icons/target.svg" alt="Target" class="glass-card-icon">
+                        <h3 class="glass-card-title">Strategic Planning</h3>
+                        <p class="glass-card-text">We help you identify high-impact AI opportunities that align with your business goals.</p>
+                    </div>
+                </div>
+                <div class="component-code">
+                    <pre>&lt;div class="glass-card"&gt;
+    &lt;img src="icon.svg" alt="Icon" class="glass-card-icon"&gt;
+    &lt;h3 class="glass-card-title"&gt;Card Title&lt;/h3&gt;
+    &lt;p class="glass-card-text"&gt;Card description text...&lt;/p&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Glass Card Grid</h3>
+                <div class="component-demo" style="width: 100%;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); width: 100%;">
+                        <div class="glass-card">
+                            <h4 class="glass-card-title" style="font-size: 1rem;">Card 1</h4>
+                            <p class="glass-card-text" style="font-size: 0.9rem;">Short description</p>
+                        </div>
+                        <div class="glass-card">
+                            <h4 class="glass-card-title" style="font-size: 1rem;">Card 2</h4>
+                            <p class="glass-card-text" style="font-size: 0.9rem;">Short description</p>
+                        </div>
+                        <div class="glass-card">
+                            <h4 class="glass-card-title" style="font-size: 1rem;">Card 3</h4>
+                            <p class="glass-card-text" style="font-size: 0.9rem;">Short description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms Section -->
+        <section id="forms" class="section">
+            <h2 class="section-title">Form Elements</h2>
+            <p class="section-description">Styled form inputs and controls.</p>
+
+            <div class="component">
+                <h3 class="component-title">Text Inputs</h3>
+                <div class="component-demo" style="width: 100%; max-width: 500px;">
+                    <div class="form-group">
+                        <label class="form-label">Text Input</label>
+                        <input type="text" class="form-input" placeholder="Enter text...">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Input</label>
+                        <input type="email" class="form-input" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Textarea</label>
+                        <textarea class="form-textarea" placeholder="Enter message..."></textarea>
+                    </div>
+                </div>
+                <div class="component-code">
+                    <pre>&lt;div class="form-group"&gt;
+    &lt;label class="form-label"&gt;Label&lt;/label&gt;
+    &lt;input type="text" class="form-input" placeholder="Placeholder"&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Select & Checkboxes</h3>
+                <div class="component-demo" style="width: 100%; max-width: 500px; flex-direction: column; align-items: flex-start;">
+                    <div class="form-group" style="width: 100%;">
+                        <label class="form-label">Select Dropdown</label>
+                        <select class="form-select">
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>Checkbox option</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="radio" class="form-radio" name="radio-example">
+                            <span>Radio option 1</span>
+                        </label>
+                        <label style="display: flex; align-items: center; cursor: pointer; margin-top: 0.5rem;">
+                            <input type="radio" class="form-radio" name="radio-example">
+                            <span>Radio option 2</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Icons Section -->
+        <section id="icons" class="section">
+            <h2 class="section-title">Icons</h2>
+            <p class="section-description">Custom SVG icons used throughout the site.</p>
+
+            <div class="component">
+                <h3 class="component-title">Icon Library</h3>
+                <div class="component-demo" style="width: 100%;">
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <img src="../images/icons/target.svg" alt="Target">
+                            <div class="icon-name">target.svg</div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="../images/icons/lightbulb.svg" alt="Lightbulb">
+                            <div class="icon-name">lightbulb.svg</div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="../images/icons/handshake.svg" alt="Handshake">
+                            <div class="icon-name">handshake.svg</div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="../images/icons/books.svg" alt="Books">
+                            <div class="icon-name">books.svg</div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="../images/icons/rocket.svg" alt="Rocket">
+                            <div class="icon-name">rocket.svg</div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="../images/icons/growth.svg" alt="Growth">
+                            <div class="icon-name">growth.svg</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="component-code">
+                    <pre>&lt;!-- Icon Usage --&gt;
+&lt;img src="/images/icons/target.svg" alt="Target" width="48" height="48"&gt;</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Font Awesome Icons</h3>
+                <div class="component-demo">
+                    <i class="fas fa-home" style="font-size: 2rem; color: var(--primary-purple);"></i>
+                    <i class="fas fa-envelope" style="font-size: 2rem; color: var(--primary-orange);"></i>
+                    <i class="fas fa-user" style="font-size: 2rem; color: var(--primary-pink);"></i>
+                    <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--primary-purple);"></i>
+                    <i class="fas fa-cog" style="font-size: 2rem; color: var(--primary-orange);"></i>
+                </div>
+                <div class="component-code">
+                    <pre>&lt;!-- Font Awesome CDN --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+
+&lt;!-- Usage --&gt;
+&lt;i class="fas fa-home"&gt;&lt;/i&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing Section -->
+        <section id="spacing" class="section">
+            <h2 class="section-title">Spacing Scale</h2>
+            <p class="section-description">Consistent spacing system for layouts and components.</p>
+
+            <div class="component">
+                <h3 class="component-title">Spacing Variables</h3>
+                <div class="component-demo" style="flex-direction: column; align-items: flex-start; width: 100%;">
+                    <div style="margin-bottom: var(--space-md); width: 100%;">
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 0.5rem;">--space-xs: 0.5rem (8px)</div>
+                        <div style="height: 8px; width: 100px; background: var(--primary-purple);"></div>
+                    </div>
+                    <div style="margin-bottom: var(--space-md); width: 100%;">
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 0.5rem;">--space-sm: 1rem (16px)</div>
+                        <div style="height: 16px; width: 150px; background: var(--primary-orange);"></div>
+                    </div>
+                    <div style="margin-bottom: var(--space-md); width: 100%;">
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 0.5rem;">--space-md: 1.5rem (24px)</div>
+                        <div style="height: 24px; width: 200px; background: var(--primary-pink);"></div>
+                    </div>
+                    <div style="margin-bottom: var(--space-md); width: 100%;">
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 0.5rem;">--space-lg: 2rem (32px)</div>
+                        <div style="height: 32px; width: 250px; background: var(--primary-purple);"></div>
+                    </div>
+                    <div style="width: 100%;">
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 0.5rem;">--space-xl: 3rem (48px)</div>
+                        <div style="height: 48px; width: 300px; background: var(--primary-orange);"></div>
+                    </div>
+                </div>
+                <div class="component-code">
+                    <pre>/* CSS Variables */
+--space-xs: 0.5rem;   /* 8px */
+--space-sm: 1rem;     /* 16px */
+--space-md: 1.5rem;   /* 24px */
+--space-lg: 2rem;     /* 32px */
+--space-xl: 3rem;     /* 48px */</pre>
+                </div>
+            </div>
+
+            <div class="component">
+                <h3 class="component-title">Border Radius</h3>
+                <div class="component-demo">
+                    <div style="width: 100px; height: 100px; background: var(--primary-purple); border-radius: var(--radius-sm);"></div>
+                    <div style="width: 100px; height: 100px; background: var(--primary-orange); border-radius: var(--radius-md);"></div>
+                    <div style="width: 100px; height: 100px; background: var(--primary-pink); border-radius: var(--radius-lg);"></div>
+                    <div style="width: 100px; height: 100px; background: var(--primary-purple); border-radius: var(--radius-xl);"></div>
+                </div>
+                <div class="component-code">
+                    <pre>/* CSS Variables */
+--radius-sm: 8px;
+--radius-md: 12px;
+--radius-lg: 16px;
+--radius-xl: 24px;</pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: var(--space-xl); border-top: 1px solid var(--glass-border); margin-top: var(--space-xl);">
+        <p style="color: var(--text-secondary);">
+            <strong>JMC Design System</strong> • Created for consistent UI development
+        </p>
+        <p style="color: var(--text-tertiary); margin-top: var(--space-sm); font-size: 0.9rem;">
+            Last updated: January 2026
+        </p>
+    </footer>
+</body>
+</html>

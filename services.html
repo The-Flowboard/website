@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enterprise AI implementation, intelligent automation at scale, and software deployment. We deliver measurable efficiency gains and strategic transformation for your business.">
+    <meta name="keywords" content="AI implementation, automation services, business transformation, lead generation automation, customer service AI, business intelligence, marketing automation, software implementation">
+    <meta name="author" content="Joshi Management Consultancy">
+    <meta property="og:title" content="Our Services | Joshi Management Consultancy">
+    <meta property="og:description" content="Enterprise AI implementation, intelligent automation at scale, and software deployment. We deliver measurable efficiency gains and strategic transformation for your business.">
+    <meta property="og:image" content="https://joshimc.com/og-image.jpg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Our Services | Joshi Management Consultancy</title>
+    
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Beautiful, distinctive fonts with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Sora:wght@600;700;800&display=swap&subset=latin" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/main-styles.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        :root {
+            --color-youtube-red: #FF0000;
+        }
+
+        /* Fix page hero - add padding to clear navigation */
+        .page-hero {
+            padding-top: 140px !important;
+            padding-bottom: 40px !important;
+        }
+
+        /* Reduce spacing for services section */
+        .section {
+            padding: 40px 0 !important;
+        }
+
+        /* Service sections styling */
+        .service-section {
+            margin-bottom: 3rem !important;
+        }
+
+        /* Service header - icon inline with title like about page */
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .service-icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-icon-box img {
+            width: 48px;
+            height: 48px;
+            filter: brightness(0) invert(1);
+        }
+
+        .service-title-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .service-title-group h2 {
+            margin: 0 0 0.25rem 0;
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+
+        .service-subtitle {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+        }
+
+        /* Featured badge positioning */
+        .featured-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Service content layout */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* Service CTA buttons */
+        .service-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Implementation Process - Sticky Scroll Effect */
+        #process-timeline {
+            position: relative;
+        }
+
+        .process-scroll-wrapper {
+            position: relative;
+            height: 400vh; /* 4x viewport height for smooth scrolling through steps */
+        }
+
+        .process-timeline-container {
+            position: sticky;
+            top: 100px;
+            height: calc(100vh - 100px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding-top: 2rem;
+        }
+
+        .process-cards-container {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 900px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .process-step.active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 2;
+        }
+
+        .process-step.prev {
+            opacity: 0;
+            transform: translate(-50%, -60%);
+        }
+
+        .process-step.next {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+        }
+
+        .process-step-wrapper {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .process-step-number {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 8px 32px rgba(147, 51, 234, 0.3);
+            position: relative;
+        }
+
+        .process-step-number::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(180deg, var(--accent-cyan) 0%, transparent 100%);
+        }
+
+        .process-step:last-child .process-step-number::after {
+            display: none;
+        }
+
+        .process-step-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .process-step-content h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.75rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .process-step-content p {
+            margin: 0 0 1rem 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .process-step-details {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .process-detail {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .process-detail-label {
+            font-size: 0.875rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .process-detail-value {
+            color: var(--text-primary);
+            font-size: 1.125rem;
+        }
+
+        .process-deliverables {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+
+        .process-deliverables li {
+            padding-left: 1.75rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .process-deliverables li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* Progress indicator */
+        .process-progress-indicator {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .process-progress-indicator.visible {
+            opacity: 1;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .progress-dot.active {
+            background: var(--accent-cyan);
+            box-shadow: 0 0 12px var(--accent-cyan);
+            transform: scale(1.3);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .page-hero {
+                padding-top: 120px !important;
+            }
+
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            /* Disable sticky scroll on mobile */
+            .process-scroll-wrapper {
+                height: auto;
+            }
+
+            .process-timeline-container {
+                position: relative;
+                height: auto;
+            }
+
+            .process-step {
+                position: relative;
+                opacity: 1;
+                transform: none !important;
+                margin-bottom: 3rem;
+                pointer-events: auto;
+            }
+
+            .process-step-wrapper {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .process-step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .process-step-number::after {
+                height: 60px;
+            }
+
+            .process-detail {
+                min-width: 150px;
+            }
+
+            .process-progress-indicator {
+                display: none;
+            }
+        }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5HH2RHZLZ7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5HH2RHZLZ7');
+</script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- NAVIGATION -->
+    <nav id="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo"><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="services">Solutions</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle">Industries <span class="dropdown-arrow">▼</span></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="real-estate">Real Estate and Property Management</a></li>
+                            <li><a href="professional-services">Professional Services</a></li>
+                            <li><a href="financial-services">Financial Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="assessment" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Free Assessment</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span>☰</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Enterprise AI Services Built for <span class="gradient-text">Operational Scale</span></h1>
+            <p>From strategic opportunity assessment to enterprise-wide deployment—we deliver end-to-end AI programs aligned to your operational objectives and accountable to measurable outcomes.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES CONTENT -->
+    <section class="section">
+        <div class="container">
+
+            <!-- SERVICE 1: AI OPPORTUNITY ASSESSMENT - FEATURED -->
+            <div class="service-section glass-card" id="opportunity-assessment" style="animation-delay: 0.1s;">
+                <span class="featured-badge">⭐ Most Requested Engagement</span>
+                <div class="service-header">
+                    <div class="service-icon-box">
+                        <img src="/images/icons/search.svg" alt="AI Opportunity Assessment icon">
+                    </div>
+                    <div class="service-title-group">
+                        <h2>Enterprise AI Opportunity Assessment</h2>
+                        <p class="service-subtitle">Structured Analysis. Quantified Opportunity. Clear Roadmap.</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-description">
+                        <p>A rigorous, structured assessment of your enterprise operations to surface 3-5 high-impact AI opportunities—each accompanied by financial modeling, implementation scoping, and projected ROI before any commitment is made.</p>
+                        <p style="margin-top: 1rem;">We go beyond surface-level analysis. Our methodology involves cross-functional stakeholder engagement, process mapping, technology infrastructure review, and organizational readiness evaluation to build a prioritized portfolio of AI initiatives grounded in your actual constraints and strategic objectives.</p>
+                        <p style="margin-top: 1rem;"><strong>Designed for:</strong> C-suite executives and senior leadership teams seeking a data-driven foundation for enterprise AI investment decisions—with full visibility into expected costs, timelines, and measurable outcomes.</p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 1rem; font-size: 1.25rem;">Assessment Deliverables:</h4>
+                        <ul class="service-features">
+                            <li>3-5 prioritized AI initiatives with full ROI and NPV projections</li>
+                            <li>Implementation scope, architecture requirements, and effort estimates</li>
+                            <li>Organizational readiness assessment and change management considerations</li>
+                            <li>Resource and capability gap analysis</li>
+                            <li>Phased strategic roadmap with milestone-based success criteria</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <a href="assessment" class="btn btn-primary" style="font-size: 1.25rem; padding: 1.25rem 3rem;">Request Enterprise Assessment</a>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; width: 100%; text-align: left;">
+                        💡 <strong>Complimentary initial assessment</strong> to scope the right enterprise engagement for your organization
+                    </p>
+                </div>
+            </div>
+
+            <!-- SERVICE 2: AI IMPLEMENTATION -->
+            <div class="service-section glass-card" id="ai-implementation" style="animation-delay: 0.2s;">
+                <div class="service-header">
+                    <div class="service-icon-box">
+                        <img src="/images/icons/robot.svg" alt="AI Implementation icon">
+                    </div>
+                    <div class="service-title-group">
+                        <h2>Enterprise AI Implementation</h2>
+                        <p class="service-subtitle">End-to-End AI Delivery at Organizational Scale</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-description">
+                        <p>We manage the complete enterprise AI implementation lifecycle—from stakeholder alignment and architecture design through to production deployment, integration, and performance monitoring. Our methodology is built for organizational complexity, not simplified for it.</p>
+                        <p style="margin-top: 1rem;">We architect and deploy intelligent automation systems that operate at enterprise scale: high-throughput workflows, multi-system integrations, governance-compliant data handling, and change management programs that ensure organization-wide adoption. Every solution is designed for long-term maintainability and measurable performance against agreed KPIs.</p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 1rem; font-size: 1.25rem;">Enterprise AI Capabilities:</h4>
+                        <ul class="service-features">
+                            <li>Intelligent workflow automation across business units</li>
+                            <li>AI-powered customer engagement and service automation</li>
+                            <li>Predictive analytics and decision-support systems</li>
+                            <li>Automated document processing and knowledge extraction</li>
+                            <li>Enterprise intelligence platforms and executive reporting</li>
+                            <li>Multi-system integration and enterprise architecture alignment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <a href="contact" class="btn btn-primary">Start Your AI Project</a>
+                    <a href="#process-timeline" class="btn btn-secondary">See Our Process</a>
+                </div>
+            </div>
+
+            <!-- SERVICE 3: SOFTWARE IMPLEMENTATION -->
+            <div class="service-section glass-card" id="software-implementation" style="animation-delay: 0.3s;">
+                <div class="service-header">
+                    <div class="service-icon-box">
+                        <img src="/images/icons/laptop.svg" alt="Software Implementation icon">
+                    </div>
+                    <div class="service-title-group">
+                        <h2>Enterprise Software Implementation</h2>
+                        <p class="service-subtitle">Strategic Deployment, Integration & Organizational Adoption</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-description">
+                        <p>Underutilized enterprise technology represents significant hidden costs—in wasted licenses, inefficient workflows, and missed operational leverage. We specialize in enterprise software deployments that are fully adopted, tightly integrated, and aligned to how your organization actually operates.</p>
+                        <p style="margin-top: 1rem;">Our approach covers the full implementation lifecycle: requirements analysis, vendor evaluation, configuration and customization, data migration, cross-system integration, and structured change management programs. The result is a technology stack that compounds value across your organization over time—not one that creates new adoption challenges.</p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 1rem; font-size: 1.25rem;">Implementation Scope:</h4>
+                        <ul class="service-features">
+                            <li>Enterprise requirements analysis and platform evaluation</li>
+                            <li>System architecture, configuration, and customization</li>
+                            <li>Data migration, integrity validation, and integration architecture</li>
+                            <li>Role-based enablement programs with measurable adoption benchmarks</li>
+                            <li>Process re-engineering to maximize platform ROI</li>
+                            <li>Hypercare support and post-deployment optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <a href="contact" class="btn btn-primary">Discuss Your Software Needs</a>
+                    <a href="#process-timeline" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+
+            <!-- SERVICE 4: CORPORATE TRAINING -->
+            <div class="service-section glass-card" id="corporate-training" style="animation-delay: 0.4s;">
+                <div class="service-header">
+                    <div class="service-icon-box">
+                        <img src="/images/icons/graduation.svg" alt="Corporate AI Training icon">
+                    </div>
+                    <div class="service-title-group">
+                        <h2>Enterprise AI Capability Building</h2>
+                        <p class="service-subtitle">Organization-Wide AI Enablement & Strategic Adoption</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-description">
+                        <p>Sustained AI transformation requires more than technology deployment—it requires building genuine organizational capability. Our enterprise training programs operate at multiple levels: executive AI strategy workshops, functional leadership enablement, and department-level operational training tied directly to your live systems and processes.</p>
+                        <p style="margin-top: 1rem;">Every program is designed around your specific use cases, technology stack, and adoption benchmarks. We measure outcomes—not just completion rates—tracking how training translates into operational behavior change, tool utilization, and contribution to defined business KPIs.</p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 1rem; font-size: 1.25rem;">Enterprise Training Programs:</h4>
+                        <ul class="service-features">
+                            <li>Executive AI strategy and governance workshop</li>
+                            <li>AI opportunity identification for functional and operations leaders</li>
+                            <li>Department-level automation enablement (operations, finance, sales, marketing)</li>
+                            <li>Data literacy and enterprise intelligence platform adoption</li>
+                            <li>Change management and AI adoption frameworks</li>
+                            <li>Ongoing capability coaching tied to post-deployment performance metrics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <a href="contact" class="btn btn-primary">Design Your Training Program</a>
+                    <a href="courses" class="btn btn-secondary">View Course Catalog</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROCESS TIMELINE -->
+    <section class="section" id="process-timeline" style="padding: 80px 0 0 0 !important;">
+        <div class="process-scroll-wrapper">
+            <div class="process-timeline-container">
+                <!-- Section title stays visible during scroll -->
+                <div class="container">
+                    <div class="section-title" style="margin-bottom: 1.5rem;">
+                        <h2>Our Enterprise Implementation Methodology</h2>
+                        <p>A disciplined 5-phase delivery framework built for organizational complexity and accountability</p>
+                    </div>
+                </div>
+
+                <!-- Cards container -->
+                <div class="process-cards-container">
+                <!-- Step 1: Discovery -->
+                <div class="process-step" data-step="1">
+                    <div class="process-step-wrapper">
+                        <div class="process-step-number">1</div>
+                        <div class="process-step-content">
+                        <h3>Discovery & Organizational Assessment</h3>
+                        <p>We conduct rigorous discovery across your organization—stakeholder interviews, cross-functional process mapping, technology infrastructure review, and readiness evaluation. We identify high-impact AI opportunities and the organizational conditions that will determine implementation success.</p>
+                        <div class="process-step-details">
+                            <div class="process-detail">
+                                <div class="process-detail-label">Duration</div>
+                                <div class="process-detail-value">1-2 Weeks</div>
+                            </div>
+                            <div class="process-detail">
+                                <div class="process-detail-label">Key Deliverable</div>
+                                <div class="process-detail-value">Opportunity Assessment Report</div>
+                            </div>
+                        </div>
+                        <ul class="process-deliverables">
+                            <li>Stakeholder interviews & workshops</li>
+                            <li>Current process analysis</li>
+                            <li>Technology infrastructure review</li>
+                            <li>3-5 prioritized AI opportunities</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Strategy -->
+                <div class="process-step" data-step="2">
+                    <div class="process-step-wrapper">
+                        <div class="process-step-number">2</div>
+                        <div class="process-step-content">
+                        <h3>Strategic Planning & Program Design</h3>
+                        <p>We develop a detailed enterprise implementation roadmap—phased by business priority, mapped to organizational capacity, and governed by milestone-based success criteria. Every initiative is scoped with accurate timelines, resource requirements, and defined KPIs before work begins.</p>
+                        <div class="process-step-details">
+                            <div class="process-detail">
+                                <div class="process-detail-label">Duration</div>
+                                <div class="process-detail-value">1 Week</div>
+                            </div>
+                            <div class="process-detail">
+                                <div class="process-detail-label">Key Deliverable</div>
+                                <div class="process-detail-value">Implementation Roadmap</div>
+                            </div>
+                        </div>
+                        <ul class="process-deliverables">
+                            <li>Project timeline & milestones</li>
+                            <li>Resource allocation plan</li>
+                            <li>Risk assessment & mitigation</li>
+                            <li>Success metrics & KPIs</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Development -->
+                <div class="process-step" data-step="3">
+                    <div class="process-step-wrapper">
+                        <div class="process-step-number">3</div>
+                        <div class="process-step-content">
+                        <h3>Build, Validate & Stress Test</h3>
+                        <p>Our implementation team develops enterprise AI solutions using proven architecture patterns, security standards, and integration frameworks. We work in structured delivery sprints with continuous stakeholder review, UAT cycles, and performance validation against your defined acceptance criteria.</p>
+                        <div class="process-step-details">
+                            <div class="process-detail">
+                                <div class="process-detail-label">Duration</div>
+                                <div class="process-detail-value">4-8 Weeks</div>
+                            </div>
+                            <div class="process-detail">
+                                <div class="process-detail-label">Key Deliverable</div>
+                                <div class="process-detail-value">Working AI Solution</div>
+                            </div>
+                        </div>
+                        <ul class="process-deliverables">
+                            <li>Agile development sprints</li>
+                            <li>Regular progress reviews</li>
+                            <li>Quality assurance testing</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Deployment -->
+                <div class="process-step" data-step="4">
+                    <div class="process-step-wrapper">
+                        <div class="process-step-number">4</div>
+                        <div class="process-step-content">
+                        <h3>Deployment & Organizational Enablement</h3>
+                        <p>We execute production deployment with structured change management to minimize operational disruption. Role-based enablement programs ensure every stakeholder level—from end users to administrators—operates effectively from day one.</p>
+                        <div class="process-step-details">
+                            <div class="process-detail">
+                                <div class="process-detail-label">Duration</div>
+                                <div class="process-detail-value">1-2 Weeks</div>
+                            </div>
+                            <div class="process-detail">
+                                <div class="process-detail-label">Key Deliverable</div>
+                                <div class="process-detail-value">Production System</div>
+                            </div>
+                        </div>
+                        <ul class="process-deliverables">
+                            <li>Production deployment</li>
+                            <li>Team training sessions</li>
+                            <li>Documentation & guides</li>
+                            <li>Change management support</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Optimization -->
+                <div class="process-step" data-step="5">
+                    <div class="process-step-wrapper">
+                        <div class="process-step-number">5</div>
+                        <div class="process-step-content">
+                        <h3>Performance Management & Continuous Optimization</h3>
+                        <p>Post-deployment, we maintain active performance monitoring against agreed KPIs. Structured review cycles surface optimization opportunities, track ROI realization, and identify expansion potential—ensuring your AI investment compounds value over time rather than plateauing after go-live.</p>
+                        <div class="process-step-details">
+                            <div class="process-detail">
+                                <div class="process-detail-label">Duration</div>
+                                <div class="process-detail-value">Ongoing</div>
+                            </div>
+                            <div class="process-detail">
+                                <div class="process-detail-label">Key Deliverable</div>
+                                <div class="process-detail-value">Performance Reports</div>
+                            </div>
+                        </div>
+                        <ul class="process-deliverables">
+                            <li>Performance monitoring</li>
+                            <li>Monthly optimization reviews</li>
+                            <li>ROI tracking & reporting</li>
+                            <li>Continuous improvement</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Indicator -->
+                <div class="process-progress-indicator">
+                    <div class="progress-dot" data-step="1"></div>
+                    <div class="progress-dot" data-step="2"></div>
+                    <div class="progress-dot" data-step="3"></div>
+                    <div class="progress-dot" data-step="4"></div>
+                    <div class="progress-dot" data-step="5"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Build Your Enterprise AI Program?</h2>
+                    <p>Request our enterprise assessment and receive a structured analysis of your highest-value AI opportunities—with financial modeling, implementation scoping, and a prioritized roadmap tied to your strategic objectives.</p>
+                    <a href="assessment" class="btn btn-primary" style="font-size: 1.25rem; padding: 1.25rem 3rem;">Request Enterprise Assessment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></h3>
+                    <p>Joshi Management Consultancy - Enterprise AI implementation and intelligent automation programs that deliver measurable operational outcomes at scale.</p>
+                    <div class="social-links">
+                     <a href="https://www.linkedin.com/company/joshimc/" aria-label="LinkedIn" target="_blank">in</a>
+                     <a href="https://www.instagram.com/joshiconsulting" aria-label="Instagram" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                         </svg>
+                     </a>
+                     <a href="#" aria-label="YouTube">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                             <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                            </svg>
+                    </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#ai-implementation">AI Implementation</a></li>
+                        <li><a href="services.html#software-implementation">Software Implementation</a></li>
+                        <li><a href="services.html#opportunity-assessment">AI Opportunity Assessment</a></li>
+                        <li><a href="services.html#corporate-training">Corporate Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="blog">Blog</a></li>
+                        <li><a href="courses">Courses</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Data Rights Request</a></li>
+                    </ul>
+                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Joshi Management Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ===== NAVIGATION SCROLL EFFECT =====
+        const nav = document.getElementById('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // ===== MOBILE MENU TOGGLE WITH FOCUS TRAP =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        let lastFocusedElement = null;
+
+        // Get all focusable elements in the menu
+        function getFocusableElements() {
+            return Array.from(navLinks.querySelectorAll(
+                'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            )).filter(el => {
+                return el.offsetParent !== null; // Only visible elements
+            });
+        }
+
+        // Focus trap handler
+        function trapFocus(event) {
+            if (!navLinks.classList.contains('active')) return;
+
+            const focusableElements = getFocusableElements();
+            if (focusableElements.length === 0) return;
+
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            // Tab key
+            if (event.key === 'Tab') {
+                if (event.shiftKey) {
+                    // Shift + Tab
+                    if (document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    // Tab
+                    if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+
+            // Escape key closes menu
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        }
+
+        // Open menu function
+        function openMenu() {
+            // Store the element that had focus before opening
+            lastFocusedElement = document.activeElement;
+
+            navLinks.classList.add('active');
+            mobileMenuBtn.innerHTML = '<span>✕</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+
+            // Add focus trap listener
+            document.addEventListener('keydown', trapFocus);
+
+            // Focus first menu item
+            setTimeout(() => {
+                const focusableElements = getFocusableElements();
+                if (focusableElements.length > 0) {
+                    focusableElements[0].focus();
+                }
+            }, 100); // Small delay to ensure menu is visible
+        }
+
+        // Close menu function
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+            // Remove focus trap listener
+            document.removeEventListener('keydown', trapFocus);
+
+            // Return focus to menu button
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            } else {
+                mobileMenuBtn.focus();
+            }
+        }
+
+        // Toggle menu on button click
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = navLinks.classList.contains('active');
+            if (isActive) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Close mobile menu when clicking a link (but not dropdown toggles)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!link.classList.contains('nav-dropdown-toggle')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (navLinks.classList.contains('active') &&
+                !navLinks.contains(event.target) &&
+                !mobileMenuBtn.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        // ===== INDUSTRIES DROPDOWN =====
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = this.closest('.nav-dropdown');
+                const isOpen = dropdown.classList.contains('open');
+                document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+                if (!isOpen) dropdown.classList.add('open');
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-dropdown')) {
+                document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+            }
+        });
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // ===== STICKY SCROLL PROCESS TIMELINE =====
+        (function() {
+            // Only run on desktop (not mobile)
+            if (window.innerWidth <= 768) return;
+
+            const processSection = document.querySelector('#process-timeline');
+            const scrollWrapper = document.querySelector('.process-scroll-wrapper');
+            const steps = document.querySelectorAll('.process-step');
+            const progressDots = document.querySelectorAll('.progress-dot');
+            const progressIndicator = document.querySelector('.process-progress-indicator');
+
+            if (!processSection || !scrollWrapper || steps.length === 0) return;
+
+            let currentStep = 0;
+            const totalSteps = steps.length;
+
+            // Initialize: show first step
+            steps[0].classList.add('active');
+            progressDots[0].classList.add('active');
+
+            function updateStep(newStep) {
+                if (newStep === currentStep || newStep < 0 || newStep >= totalSteps) return;
+
+                // Remove active class from current step
+                steps[currentStep].classList.remove('active');
+                steps[currentStep].classList.add(newStep > currentStep ? 'prev' : 'next');
+                progressDots[currentStep].classList.remove('active');
+
+                // Add active class to new step
+                steps[newStep].classList.remove('prev', 'next');
+                steps[newStep].classList.add('active');
+                progressDots[newStep].classList.add('active');
+
+                currentStep = newStep;
+            }
+
+            // Scroll handler
+            function handleScroll() {
+                const rect = scrollWrapper.getBoundingClientRect();
+                const wrapperHeight = scrollWrapper.offsetHeight;
+                const viewportHeight = window.innerHeight;
+
+                // Show progress indicator when section is in view
+                if (rect.top <= 0 && rect.bottom >= viewportHeight) {
+                    progressIndicator.classList.add('visible');
+                } else {
+                    progressIndicator.classList.remove('visible');
+                }
+
+                // Calculate scroll progress through the wrapper
+                // When wrapper top hits top of viewport (rect.top = 0), we're at start
+                // When wrapper bottom hits bottom of viewport, we're at end
+                if (rect.top <= 0 && rect.bottom >= viewportHeight) {
+                    // We're in the sticky scroll zone
+                    const scrollProgress = Math.abs(rect.top) / (wrapperHeight - viewportHeight);
+
+                    // Map scroll progress to steps (0 to totalSteps-1)
+                    const targetStep = Math.min(
+                        Math.floor(scrollProgress * totalSteps),
+                        totalSteps - 1
+                    );
+
+                    updateStep(targetStep);
+                }
+            }
+
+            // Click handler for progress dots
+            progressDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    // Calculate target scroll position
+                    const rect = scrollWrapper.getBoundingClientRect();
+                    const wrapperHeight = scrollWrapper.offsetHeight;
+                    const viewportHeight = window.innerHeight;
+                    const scrollableHeight = wrapperHeight - viewportHeight;
+
+                    // Calculate how much to scroll to reach this step
+                    const targetProgress = index / totalSteps;
+                    const targetScroll = targetProgress * scrollableHeight;
+
+                    // Get current absolute scroll position
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    const wrapperTop = scrollWrapper.offsetTop;
+
+                    // Scroll to target position
+                    window.scrollTo({
+                        top: wrapperTop + targetScroll,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Throttled scroll event
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        handleScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            // Initial check
+            handleScroll();
+        })();
+
+        // ===== OPTIMIZED MOUSE-REACTIVE SHADER =====
+        // Uses CSS custom properties instead of recreating style elements (60x/sec performance gain)
+        (function() {
+            let mouseX = 0.5;
+            let mouseY = 0.5;
+            let targetX = 0.5;
+            let targetY = 0.5;
+            let isActive = true;
+            let animationFrame = null;
+
+            // Disable on mobile/touch devices to save battery
+            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+                return;
+            }
+
+            // Get document root for CSS custom properties
+            const root = document.documentElement;
+
+            // Smooth animation using lerp (linear interpolation)
+            function lerp(start, end, factor) {
+                return start + (end - start) * factor;
+            }
+
+            // Track mouse movement (throttled to 60fps max)
+            let lastUpdate = 0;
+            document.addEventListener('mousemove', (e) => {
+                const now = Date.now();
+                if (now - lastUpdate < 16) return; // ~60fps throttle
+                lastUpdate = now;
+
+                targetX = e.clientX / window.innerWidth;
+                targetY = e.clientY / window.innerHeight;
+            });
+
+            // Pause animation when user is idle (3 seconds)
+            let idleTimer;
+            function resetIdleTimer() {
+                isActive = true;
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(() => {
+                    isActive = false;
+                }, 3000);
+            }
+
+            document.addEventListener('mousemove', resetIdleTimer);
+            document.addEventListener('scroll', resetIdleTimer);
+            resetIdleTimer();
+
+            // Update shader animation
+            function updateShader() {
+                if (isActive) {
+                    // Smoothly interpolate current position towards target
+                    mouseX = lerp(mouseX, targetX, 0.1);
+                    mouseY = lerp(mouseY, targetY, 0.1);
+
+                    // Convert to percentage for CSS
+                    const x1 = Math.round(mouseX * 100) + '%';
+                    const y1 = Math.round(mouseY * 100) + '%';
+
+                    // Second gradient follows with inverted offset
+                    const x2 = Math.round((1 - mouseX) * 100) + '%';
+                    const y2 = Math.round((1 - mouseY) * 100) + '%';
+
+                    // Update CSS custom properties (much faster than recreating style elements)
+                    root.style.setProperty('--mouse-x', x1);
+                    root.style.setProperty('--mouse-y', y1);
+                    root.style.setProperty('--mouse-x-inv', x2);
+                    root.style.setProperty('--mouse-y-inv', y2);
+                }
+
+                animationFrame = requestAnimationFrame(updateShader);
+            }
+
+            // Start the shader animation
+            updateShader();
+
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+            });
+        })();
+
+        // ===== YOUTUBE MODAL =====
+document.addEventListener('DOMContentLoaded', function() {
+    const youtubeModal = document.getElementById('youtubeModal');
+    const closeModal = document.getElementById('closeModal');
+    const youtubeSubscribeForm = document.getElementById('youtubeSubscribeForm');
+    const youtubeSuccessMessage = document.getElementById('youtubeSuccessMessage');
+
+    // Check if modal exists (it should)
+    if (!youtubeModal) {
+        console.error('YouTube modal not found');
+        return;
+    }
+
+    // Find all YouTube social links
+    const youtubeLinks = document.querySelectorAll('a[aria-label="YouTube"]');
+    youtubeLinks.forEach(link => {
+        link.onclick = function(e) {
+            e.preventDefault();
+            youtubeModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        };
+    });
+
+    // Close modal
+    closeModal.onclick = function() {
+        youtubeModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target == youtubeModal) {
+            youtubeModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    // Handle form submission
+    youtubeSubscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('youtubeEmail').value;
+        const submitBtn = youtubeSubscribeForm.querySelector('button[type="submit"]');
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Subscribing...';
+        
+        const formData = new FormData();
+        formData.append('email', email);
+        
+        fetch('php/youtube_subscribe.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success message
+                youtubeSubscribeForm.style.display = 'none';
+                youtubeSuccessMessage.style.display = 'block';
+                
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    youtubeModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    
+                    // Reset form for next time
+                    setTimeout(() => {
+                        youtubeSubscribeForm.style.display = 'block';
+                        youtubeSuccessMessage.style.display = 'none';
+                        youtubeSubscribeForm.reset();
+                    }, 500);
+                }, 3000);
+            } else {
+                alert(data.message);
+            }
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Subscribe for Updates';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Subscribe for Updates';
+        });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && youtubeModal.style.display === 'block') {
+            youtubeModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+    </script>
+<!-- YouTube Subscribe Modal -->
+<div id="youtubeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content glass-card">
+        <button class="modal-close" id="closeModal" aria-label="Close dialog"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16" style="color: var(--color-youtube-red);" aria-hidden="true">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            </svg>
+            <h2 id="modalTitle" style="margin-top: 1.5rem;">YouTube Channel Coming Soon!</h2>
+        </div>
+        <p style="margin: 1.5rem 0; font-size: 1.125rem; line-height: 1.6;">
+            We're launching our YouTube channel with exclusive AI tutorials, case studies, and industry insights. Be the first to know when we go live!
+        </p>
+        
+        <div id="youtubeSuccessMessage" class="modal-success" style="display: none;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+            <h3 style="color: var(--accent-green); margin-bottom: 0.5rem;">You're Subscribed!</h3>
+            <p>We'll send you an email as soon as our channel launches.</p>
+        </div>
+        
+        <form id="youtubeSubscribeForm" class="modal-form">
+            <input
+                type="email"
+                name="email"
+                id="youtubeEmail"
+                placeholder="Enter your email address"
+                aria-label="Email address for YouTube channel launch notifications"
+                required
+                style="width: 100%; padding: 1rem 1.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; color: white; font-size: 1rem; font-family: var(--font-body); margin-bottom: 1.5rem;"
+            >
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" aria-label="Subscribe for YouTube channel launch updates">
+                Subscribe for Updates
+            </button>
+        </form>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted); text-align: center;">
+            🔒 We respect your privacy. Unsubscribe anytime.
+        </p>
+    </div>
+</div>
+    <script src="/js/cookie-consent.min.js"></script>
+</body>
+</html>

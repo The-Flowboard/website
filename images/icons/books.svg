@@ -1,0 +1,16 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Book 1 (left, tilted) -->
+  <path d="M8 12 L16 10 L16 36 L8 38 Z" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" fill-opacity="0.2"/>
+  <line x1="8" y1="16" x2="16" y2="14" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Book 2 (middle, upright) -->
+  <rect x="18" y="10" width="10" height="28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" fill-opacity="0.15"/>
+  <line x1="18" y1="16" x2="28" y2="16" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Book 3 (right, tilted opposite) -->
+  <path d="M32 10 L40 12 L40 38 L32 36 Z" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" fill-opacity="0.2"/>
+  <line x1="32" y1="14" x2="40" y2="16" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Shelf base -->
+  <line x1="4" y1="40" x2="44" y2="40" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

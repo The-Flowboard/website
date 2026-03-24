@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left hand -->
+  <path d="M4 24 L12 16 L20 24 L16 28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" fill-opacity="0.15"/>
+
+  <!-- Right hand -->
+  <path d="M44 24 L36 16 L28 24 L32 28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" fill-opacity="0.15"/>
+
+  <!-- Connecting grip -->
+  <path d="M20 24 L24 28 L28 24" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 28 L24 36 L32 28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Fingers detail -->
+  <line x1="12" y1="16" x2="14" y2="14" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="16" x2="34" y2="14" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>

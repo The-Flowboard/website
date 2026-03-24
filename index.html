@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enterprise AI implementation and intelligent automation at scale. Joshi Management Consultancy delivers measurable operational efficiency, reduced overhead, and strategic AI transformation for complex organizations.">
+    <meta name="keywords" content="AI, automation, business transformation, AI implementation, lead generation automation, customer service automation, business intelligence, marketing automation">
+    <meta name="author" content="Joshi Management Consultancy">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Joshi Management Consultancy | AI, Automation & Business Transformation</title>
+     <!-- Auto-upload test - Feb 1, 2026 -->
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Optimized Google Fonts - Only weights used (reduced 40KB download) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Sora:wght@600;700;800&display=swap&subset=latin" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joshimc.com/">
+    <meta property="og:title" content="Joshi Management Consultancy | AI, Automation & Business Transformation">
+    <meta property="og:description" content="Enterprise AI implementation and intelligent automation at scale. Drive measurable operational efficiency, cost reduction, and strategic transformation across your organization.">
+    <meta property="og:image" content="https://joshimc.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://joshimc.com/">
+    <meta property="twitter:title" content="Joshi Management Consultancy | AI, Automation & Business Transformation">
+    <meta property="twitter:description" content="Enterprise AI implementation and intelligent automation at scale. Drive measurable operational efficiency, cost reduction, and strategic transformation across your organization.">
+    <meta property="twitter:image" content="https://joshimc.com/og-image.jpg">
+    
+    <link rel="stylesheet" href="/css/main-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        /* Add spacing between hero and first section for better visual cohesion */
+        .hero + .section {
+            padding-top: 250px !important;
+        }
+
+        /* Add 50px padding after hero section */
+        .hero {
+            padding-bottom: 50px !important;
+            margin-bottom: -320px !important;
+        }
+
+        /* Reduce padding after "Our Services" section (section 2) */
+        .section:nth-of-type(2) {
+            padding-bottom: 45px !important;
+        }
+
+        /* Center text and icons in service cards */
+        .service-card {
+            text-align: center;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+        }
+
+        .service-card .service-icon {
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            text-align: center;
+            margin-bottom: 0;
+        }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5HH2RHZLZ7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5HH2RHZLZ7');
+</script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- NAVIGATION -->
+    <nav id="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo"><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="services">Solutions</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle">Industries <span class="dropdown-arrow">▼</span></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="real-estate">Real Estate and Property Management</a></li>
+                            <li><a href="professional-services">Professional Services</a></li>
+                            <li><a href="financial-services">Financial Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="assessment" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Free Assessment</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <main id="main-content">
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Smarter Systems. Less Manual Work. <span class="gradient-text">Real Results.</span></h1>
+                <p class="hero-subtitle">We design and deploy AI solutions, automation agents, and integrated business systems that eliminate repetitive work, connect your tools, and give your team the data they need to make better decisions faster.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary">See Our Solutions</a>
+                    <a href="assessment.html" class="btn btn-secondary">Take the Free AI Readiness Assessment</a>
+                </div>
+            </div>
+            <div class="hero-visual"></div>
+        </div>
+    </section>
+
+    <!-- SOLUTION CARDS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Build</h2>
+                <p>Five capability areas. One clear goal: give your team back the time they spend on work that shouldn't require them.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem;">
+                <div class="service-card glass-card" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='services#ai-implementation'">
+                    <div class="service-icon">
+                        <img src="/images/icons/robot.svg" alt="AI Business Solutions icon" width="48" height="48">
+                    </div>
+                    <h3>AI Business Solutions</h3>
+                    <p style="font-style: italic; color: var(--accent-cyan); margin-bottom: 0.75rem; font-size: 0.95rem;">Find the work AI should be doing so your team can focus on the work that matters.</p>
+                    <p>We audit your operations to identify the highest-impact AI opportunities, then design and deploy solutions tailored to your workflows—intelligent document processing, automated reporting, or AI assistants that handle routine inquiries so your team handles the complex ones.</p>
+                    <a href="services#ai-implementation" style="color: var(--accent-cyan); font-weight: 600; margin-top: 1rem; display: inline-block;">Learn more →</a>
+                </div>
+                <div class="service-card glass-card" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='services#software-implementation'">
+                    <div class="service-icon">
+                        <img src="/images/icons/laptop.svg" alt="Unified CRM and ERP icon" width="48" height="48">
+                    </div>
+                    <h3>Unified CRM &amp; ERP Systems</h3>
+                    <p style="font-style: italic; color: var(--accent-cyan); margin-bottom: 0.75rem; font-size: 0.95rem;">One connected system instead of ten disconnected tools.</p>
+                    <p>Most companies run their business across a patchwork of CRMs, spreadsheets, and communication platforms that don't talk to each other. We consolidate and integrate your core systems so data flows where it needs to go and leadership gets a single source of truth.</p>
+                    <a href="services#software-implementation" style="color: var(--accent-cyan); font-weight: 600; margin-top: 1rem; display: inline-block;">Learn more →</a>
+                </div>
+                <div class="service-card glass-card" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='services#ai-implementation'">
+                    <div class="service-icon">
+                        <img src="/images/icons/lightning.svg" alt="Custom App Development icon" width="48" height="48">
+                    </div>
+                    <h3>Custom App Development &amp; AI Integration</h3>
+                    <p style="font-style: italic; color: var(--accent-cyan); margin-bottom: 0.75rem; font-size: 0.95rem;">When off-the-shelf tools don't fit, we build what does.</p>
+                    <p>We build custom applications and integrate AI capabilities directly into your existing software—intelligent search for your knowledge base, client portals with automated workflows, or tools that solve problems specific to your business.</p>
+                    <a href="services#ai-implementation" style="color: var(--accent-cyan); font-weight: 600; margin-top: 1rem; display: inline-block;">Learn more →</a>
+                </div>
+                <div class="service-card glass-card" style="grid-column: 2 / 4; cursor: pointer;" onclick="window.location.href='services#ai-implementation'">
+                    <div class="service-icon">
+                        <img src="/images/icons/target.svg" alt="Agentic AI icon" width="48" height="48">
+                    </div>
+                    <h3>Agentic AI &amp; Automation Agents</h3>
+                    <p style="font-style: italic; color: var(--accent-cyan); margin-bottom: 0.75rem; font-size: 0.95rem;">AI that doesn't just answer questions. It gets work done.</p>
+                    <p>We build autonomous AI agents that handle multi-step workflows—triaging requests, generating documents, pulling data from multiple systems, and making decisions based on your business rules. They escalate to humans only when needed, and work around the clock.</p>
+                    <a href="services#ai-implementation" style="color: var(--accent-cyan); font-weight: 600; margin-top: 1rem; display: inline-block;">Learn more →</a>
+                </div>
+                <div class="service-card glass-card" style="grid-column: 4 / 6; cursor: pointer;" onclick="window.location.href='services#ai-implementation'">
+                    <div class="service-icon">
+                        <img src="/images/icons/growth.svg" alt="Predictive Analytics icon" width="48" height="48">
+                    </div>
+                    <h3>Predictive Analytics &amp; Business Intelligence</h3>
+                    <p style="font-style: italic; color: var(--accent-cyan); margin-bottom: 0.75rem; font-size: 0.95rem;">Stop reacting to last month's numbers. Start seeing what's coming next.</p>
+                    <p>We build analytics systems that go beyond dashboards—forecasting tools that predict demand, flag risks before they materialize, and surface patterns hidden in your data. Identify revenue opportunities your team would otherwise miss.</p>
+                    <a href="services#ai-implementation" style="color: var(--accent-cyan); font-weight: 600; margin-top: 1rem; display: inline-block;">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>From First Conversation to Live Solution in 90 Days</h2>
+                <p>We follow a proven four-phase approach that gets AI and automation solutions into your operations quickly—without disrupting your team.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+                <div class="glass-card" style="padding: 2rem; position: relative;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent-purple); opacity: 0.25; position: absolute; top: 1rem; right: 1.5rem; line-height: 1; font-family: var(--font-display);">01</div>
+                    <div style="display: inline-block; background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan)); border-radius: 8px; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Week 1–2</div>
+                    <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Discovery</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">We map your current workflows, systems, and pain points by talking to the people doing the actual work—not just leadership. We identify where time is being lost, where data is siloed, and where AI will have the most leverage.</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem; position: relative;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent-cyan); opacity: 0.25; position: absolute; top: 1rem; right: 1.5rem; line-height: 1; font-family: var(--font-display);">02</div>
+                    <div style="display: inline-block; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); border-radius: 8px; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Week 3–4</div>
+                    <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Solution Design</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">You get a prioritized roadmap with three to five recommended solutions, each scoped with a clear timeline, projected impact, and implementation plan. No vague strategy decks—concrete plans you can act on.</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem; position: relative;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent-blue); opacity: 0.25; position: absolute; top: 1rem; right: 1.5rem; line-height: 1; font-family: var(--font-display);">03</div>
+                    <div style="display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--accent-green)); border-radius: 8px; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Month 2–3</div>
+                    <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Build &amp; Deploy</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">We build your first solution and deploy it into your live environment. Your team starts seeing results while we iterate based on real usage data. Every solution is designed to integrate with your existing systems—not replace them.</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem; position: relative;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent-green); opacity: 0.25; position: absolute; top: 1rem; right: 1.5rem; line-height: 1; font-family: var(--font-display);">04</div>
+                    <div style="display: inline-block; background: linear-gradient(135deg, var(--accent-green), var(--accent-purple)); border-radius: 8px; padding: 0.4rem 0.9rem; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Ongoing</div>
+                    <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Train, Measure &amp; Scale</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">We train your team on every tool we deploy and track performance against the KPIs we agreed on upfront. Once the first solution is running, we identify the next highest-impact opportunity and repeat the cycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE/AFTER PROCESS -->
+    <section class="section" style="background: rgba(255, 255, 255, 0.02); margin: 0 2rem; border-radius: 24px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Transformation</h2>
+                <p>What changes when the right systems are in place</p>
+            </div>
+            <div class="process-visual">
+                <div class="process-state before">
+                    <h3>Before</h3>
+                    <ul>
+                        <li>Staff spending 20+ hours per week on data entry, document review, and report generation</li>
+                        <li>Five to ten disconnected systems causing duplicate work and conflicting information</li>
+                        <li>Off-the-shelf software that almost fits but requires constant workarounds</li>
+                        <li>Basic rule-based automation that breaks when anything falls outside the script</li>
+                        <li>Monthly reports that tell you what happened last quarter—nothing about what's coming next</li>
+                    </ul>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-state after">
+                    <h3>After</h3>
+                    <ul>
+                        <li>AI handles the repetitive work automatically, freeing your team for higher-value tasks</li>
+                        <li>A unified system where data flows between tools and leadership has one source of truth</li>
+                        <li>Custom applications built around your actual workflows, not the other way around</li>
+                        <li>Intelligent agents that adapt to exceptions, make decisions, and escalate only when needed</li>
+                        <li>Predictive models that flag risks, forecast demand, and surface opportunities before competitors see them</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY FIRMS CHOOSE JMC -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Firms Choose JMC</h2>
+            </div>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    After 10+ years implementing operational and technology transformations, we noticed a pattern: companies investing in AI were failing not because the technology didn't work, but because nobody connected the technology to the way their people actually work.
+                </p>
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    That is what we do differently. We don't lead with platforms or buzzwords. We start by understanding your workflows, your team's daily friction points, and what "success" actually looks like for your business. Then we build and deploy solutions that fit cleanly enough into your operations that people actually use them.
+                </p>
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 0; color: var(--text-secondary);">
+                    We work with companies across real estate, professional services, and financial services because those industries share something in common: talented people spending too much time on work that doesn't require their expertise.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Insights</h2>
+                <p>Enterprise AI strategy, implementation insights, and operational transformation perspectives</p>
+            </div>
+            <div class="blog-grid" id="homeBlogGrid">
+                <!-- Blog posts will be loaded dynamically -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                    <p>Loading latest articles...</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="blog" class="btn btn-secondary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Not Sure Where AI Fits in Your Business? That's Exactly What the Assessment Is For.</h2>
+                    <p>Our free AI Readiness Assessment takes 10 minutes and shows you the specific workflows in your organization where AI and automation will have the highest impact. You'll get a personalized report with projected time savings, cost reduction estimates, and a prioritized roadmap you can act on immediately.</p>
+                    <a href="assessment" class="btn btn-primary" style="font-size: 1.25rem; padding: 1.25rem 3rem;">Take the Free Assessment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></h3>
+                    <p>Joshi Management Consultancy - Enterprise AI implementation and intelligent automation programs that deliver measurable operational outcomes at scale.</p>
+                    <div class="social-links">
+                     <a href="https://www.linkedin.com/company/joshimc/" aria-label="LinkedIn" target="_blank">in</a>
+                     <a href="https://www.instagram.com/joshiconsulting" aria-label="Instagram" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                         </svg>
+                     </a>
+                     <a href="#" aria-label="YouTube">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                             <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                            </svg>
+                    </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#ai-implementation">AI Implementation</a></li>
+                        <li><a href="services.html#software-implementation">Software Implementation</a></li>
+                        <li><a href="services.html#opportunity-assessment">AI Opportunity Assessment</a></li>
+                        <li><a href="services.html#corporate-training">Corporate Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="blog">Blog</a></li>
+                        <li><a href="courses">Courses</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+          
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Joshi Management Consultancy. All rights reserved.</p>
+            </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Data Rights Request</a></li>
+                    </ul>
+                </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ===== NAVIGATION SCROLL EFFECT =====
+        const nav = document.getElementById('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // ===== MOBILE MENU TOGGLE WITH FOCUS TRAP =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        let lastFocusedElement = null;
+
+        // Get all focusable elements in the menu
+        function getFocusableElements() {
+            return Array.from(navLinks.querySelectorAll(
+                'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            )).filter(el => {
+                return el.offsetParent !== null; // Only visible elements
+            });
+        }
+
+        // Focus trap handler
+        function trapFocus(event) {
+            if (!navLinks.classList.contains('active')) return;
+
+            const focusableElements = getFocusableElements();
+            if (focusableElements.length === 0) return;
+
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            // Tab key
+            if (event.key === 'Tab') {
+                if (event.shiftKey) {
+                    // Shift + Tab
+                    if (document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    // Tab
+                    if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+
+            // Escape key closes menu
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        }
+
+        // Open menu function
+        function openMenu() {
+            // Store the element that had focus before opening
+            lastFocusedElement = document.activeElement;
+
+            navLinks.classList.add('active');
+            mobileMenuBtn.innerHTML = '<span>✕</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+
+            // Add focus trap listener
+            document.addEventListener('keydown', trapFocus);
+
+            // Focus first menu item
+            setTimeout(() => {
+                const focusableElements = getFocusableElements();
+                if (focusableElements.length > 0) {
+                    focusableElements[0].focus();
+                }
+            }, 100); // Small delay to ensure menu is visible
+        }
+
+        // Close menu function
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+            // Remove focus trap listener
+            document.removeEventListener('keydown', trapFocus);
+
+            // Return focus to menu button
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            } else {
+                mobileMenuBtn.focus();
+            }
+        }
+
+        // Toggle menu on button click
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = navLinks.classList.contains('active');
+            if (isActive) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Close mobile menu when clicking a link (but not dropdown toggles)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!link.classList.contains('nav-dropdown-toggle')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (navLinks.classList.contains('active') &&
+                !navLinks.contains(event.target) &&
+                !mobileMenuBtn.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        // ===== INDUSTRIES DROPDOWN =====
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = this.closest('.nav-dropdown');
+                const isOpen = dropdown.classList.contains('open');
+                document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+                if (!isOpen) dropdown.classList.add('open');
+            });
+        });
+
+        // Close dropdown on outside click
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-dropdown')) {
+                document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+            }
+        });
+
+        // ===== SCROLL REVEAL ANIMATION =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // ===== PERFORMANCE OPTIMIZATION =====
+        // Lazy load images when implemented
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        }
+
+        // ===== ANALYTICS READY =====
+        // Add your analytics tracking code here
+        function trackEvent(eventName, eventData) {
+            // Example: gtag('event', eventName, eventData);
+            console.log('Event tracked:', eventName, eventData);
+        }
+
+        // Track CTA clicks
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackEvent('cta_click', {
+                    button_text: btn.textContent,
+                    page: 'home'
+                });
+            });
+        });
+        // ===== YOUTUBE MODAL =====
+document.addEventListener('DOMContentLoaded', function() {
+    const youtubeModal = document.getElementById('youtubeModal');
+    const closeModal = document.getElementById('closeModal');
+    const youtubeSubscribeForm = document.getElementById('youtubeSubscribeForm');
+    const youtubeSuccessMessage = document.getElementById('youtubeSuccessMessage');
+
+    // Check if modal exists (it should)
+    if (!youtubeModal) {
+        console.error('YouTube modal not found');
+        return;
+    }
+
+    // Find all YouTube social links
+    const youtubeLinks = document.querySelectorAll('a[aria-label="YouTube"]');
+    youtubeLinks.forEach(link => {
+        link.onclick = function(e) {
+            e.preventDefault();
+            youtubeModal.style.display = 'block';
+            youtubeModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+            // Focus first interactive element
+            const firstInput = youtubeModal.querySelector('input, button');
+            if (firstInput) firstInput.focus();
+        };
+    });
+
+    // Close modal function
+    function closeYoutubeModal() {
+        youtubeModal.style.display = 'none';
+        youtubeModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on button click
+    closeModal.onclick = closeYoutubeModal;
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target == youtubeModal) {
+            closeYoutubeModal();
+        }
+    };
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && youtubeModal.style.display === 'block') {
+            closeYoutubeModal();
+        }
+    });
+
+    // Handle form submission
+    youtubeSubscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('youtubeEmail').value;
+        const submitBtn = youtubeSubscribeForm.querySelector('button[type="submit"]');
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Subscribing...';
+        
+        const formData = new FormData();
+        formData.append('email', email);
+        
+        fetch('php/youtube_subscribe.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success message
+                youtubeSubscribeForm.style.display = 'none';
+                youtubeSuccessMessage.style.display = 'block';
+                
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeYoutubeModal();
+                    
+                    // Reset form for next time
+                    setTimeout(() => {
+                        youtubeSubscribeForm.style.display = 'block';
+                        youtubeSuccessMessage.style.display = 'none';
+                        youtubeSubscribeForm.reset();
+                    }, 500);
+                }, 3000);
+            } else {
+                alert(data.message);
+            }
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Subscribe for Updates';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Subscribe for Updates';
+        });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && youtubeModal.style.display === 'block') {
+            youtubeModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+        // ===== LOAD BLOG POSTS FOR HOMEPAGE =====
+        async function loadHomeBlogPosts() {
+            try {
+                const response = await fetch('/php/blog_api.php?action=list&limit=3');
+                const data = await response.json();
+
+                if (data.success && data.posts.length > 0) {
+                    const blogGrid = document.getElementById('homeBlogGrid');
+                    blogGrid.innerHTML = '';
+
+                    data.posts.forEach(post => {
+                        const article = document.createElement('div');
+                        article.className = 'blog-card glass-card';
+                        article.style.cursor = 'pointer';
+
+                        // Calculate read time
+                        const wordCount = post.content.replace(/<[^>]*>/g, '').split(/\s+/).length;
+                        const readTime = Math.max(1, Math.ceil(wordCount / 200));
+
+                        // Format date
+                        const postDate = new Date(post.published_at);
+                        const formattedDate = postDate.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        });
+
+                        // Choose emoji based on category
+                        const categoryEmojis = {
+                            'ai-trends': '📊',
+                            'implementation-tips': '🎯',
+                            'case-studies': '💼',
+                            'business-strategy': '🏢',
+                            'ai-tools': '🛠️',
+                            'industry-insights': '🏥'
+                        };
+
+                        const categorySlug = (post.category || 'all').toLowerCase().replace(/\s+/g, '-');
+                        const emoji = categoryEmojis[categorySlug] || '📄';
+
+                        // Build the blog card HTML
+                        article.innerHTML = `
+                            <div class="blog-image" style="background: linear-gradient(135deg, #a855f7, #06b6d4);">
+                                ${post.featured_image ?
+                                    `<img src="${post.featured_image}" alt="${post.title}" style="width: 100%; height: 100%; object-fit: cover;">` :
+                                    emoji
+                                }
+                            </div>
+                            <span class="blog-category">${post.category || 'Article'}</span>
+                            <h3>${post.title}</h3>
+                            <p>${post.excerpt || ''}</p>
+                            <div class="blog-meta">
+                                <span>📅 ${formattedDate}</span>
+                                <span>⏱️ ${readTime} min read</span>
+                            </div>
+                        `;
+
+                        // Make entire card clickable
+                        article.addEventListener('click', function() {
+                            window.location.href = `/php/blog_post.php?slug=${post.slug}`;
+                        });
+
+                        blogGrid.appendChild(article);
+                    });
+                } else {
+                    // Fallback if no posts available
+                    document.getElementById('homeBlogGrid').innerHTML = `
+                        <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                            <p>No blog posts available yet. Check back soon!</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                document.getElementById('homeBlogGrid').innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                        <p style="color: var(--text-secondary);">Unable to load articles. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load blog posts when page loads
+        document.addEventListener('DOMContentLoaded', loadHomeBlogPosts);
+
+        // ===== OPTIMIZED MOUSE-REACTIVE SHADER =====
+        // Uses CSS custom properties instead of recreating style elements (60x/sec performance gain)
+        (function() {
+            let mouseX = 0.5;
+            let mouseY = 0.5;
+            let targetX = 0.5;
+            let targetY = 0.5;
+            let isActive = true;
+            let animationFrame = null;
+
+            // Disable on mobile/touch devices to save battery
+            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+                return;
+            }
+
+            // Get document root for CSS custom properties
+            const root = document.documentElement;
+
+            // Smooth animation using lerp (linear interpolation)
+            function lerp(start, end, factor) {
+                return start + (end - start) * factor;
+            }
+
+            // Track mouse movement (throttled to 60fps max)
+            let lastUpdate = 0;
+            document.addEventListener('mousemove', (e) => {
+                const now = Date.now();
+                if (now - lastUpdate < 16) return; // ~60fps throttle
+                lastUpdate = now;
+
+                targetX = e.clientX / window.innerWidth;
+                targetY = e.clientY / window.innerHeight;
+            });
+
+            // Pause animation when user is idle (3 seconds)
+            let idleTimer;
+            function resetIdleTimer() {
+                isActive = true;
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(() => {
+                    isActive = false;
+                }, 3000);
+            }
+
+            document.addEventListener('mousemove', resetIdleTimer);
+            document.addEventListener('scroll', resetIdleTimer);
+            resetIdleTimer();
+
+            // Update shader animation
+            function updateShader() {
+                if (isActive) {
+                    // Smoothly interpolate current position towards target
+                    mouseX = lerp(mouseX, targetX, 0.1);
+                    mouseY = lerp(mouseY, targetY, 0.1);
+
+                    // Convert to percentage for CSS
+                    const x1 = Math.round(mouseX * 100) + '%';
+                    const y1 = Math.round(mouseY * 100) + '%';
+
+                    // Second gradient follows with inverted offset
+                    const x2 = Math.round((1 - mouseX) * 100) + '%';
+                    const y2 = Math.round((1 - mouseY) * 100) + '%';
+
+                    // Update CSS custom properties (much faster than recreating style elements)
+                    root.style.setProperty('--mouse-x', x1);
+                    root.style.setProperty('--mouse-y', y1);
+                    root.style.setProperty('--mouse-x-inv', x2);
+                    root.style.setProperty('--mouse-y-inv', y2);
+                }
+
+                animationFrame = requestAnimationFrame(updateShader);
+            }
+
+            // Start the shader animation
+            updateShader();
+
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+            });
+        })();
+    </script>
+<!-- YouTube Subscribe Modal -->
+<div id="youtubeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content glass-card">
+        <button class="modal-close" id="closeModal" aria-label="Close dialog">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16" style="color: #FF0000;" aria-hidden="true">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            </svg>
+            <h2 id="modalTitle" style="margin-top: 1.5rem;">YouTube Channel Coming Soon!</h2>
+        </div>
+        <p style="margin: 1.5rem 0; font-size: 1.125rem; line-height: 1.6;">
+            We're launching our YouTube channel with exclusive AI tutorials, case studies, and industry insights. Be the first to know when we go live!
+        </p>
+        
+        <div id="youtubeSuccessMessage" class="modal-success" style="display: none;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+            <h3 style="color: var(--accent-green); margin-bottom: 0.5rem;">You're Subscribed!</h3>
+            <p>We'll send you an email as soon as our channel launches.</p>
+        </div>
+        
+        <form id="youtubeSubscribeForm" class="modal-form">
+            <input
+                type="email"
+                name="email"
+                id="youtubeEmail"
+                placeholder="Enter your email address"
+                aria-label="Email address for YouTube channel launch notifications"
+                required
+                style="width: 100%; padding: 1rem 1.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; color: white; font-size: 1rem; font-family: var(--font-body); margin-bottom: 1.5rem;"
+            >
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" aria-label="Subscribe for YouTube channel launch updates">
+                Subscribe for Updates
+            </button>
+        </form>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted); text-align: center;">
+            🔒 We respect your privacy. Unsubscribe anytime.
+        </p>
+    </div>
+</div>
+    <script src="/js/cookie-consent.min.js"></script>
+</body>
+</html>

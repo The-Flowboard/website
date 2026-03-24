@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Joshi Management Consultancy. Book your free AI opportunity assessment and discover how we can transform your business.">
+    <meta name="keywords" content="contact AI consulting, book assessment, AI consultation, get in touch, schedule meeting">
+    <meta name="author" content="Joshi Management Consultancy">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Contact Us | Joshi Management Consultancy</title>
+    
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Beautiful, distinctive fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Sora:wght@600;700;800&display=swap&subset=latin" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="/css/main-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        /* Fix page hero - add padding to clear navigation */
+        .page-hero {
+            padding-top: 140px !important;
+            padding-bottom: 60px !important;
+        }
+
+        /* Reduce spacing between sections for visual cohesion */
+        .section {
+            padding: 40px 0 !important;
+        }
+
+        /* First section after hero gets minimal top padding */
+        .page-hero + .section {
+            padding-top: 20px !important;
+        }
+
+        /* Contact grid improvements */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Contact form card styling */
+        .contact-form {
+            height: fit-content;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        /* Contact info cards - with inline icons */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-info h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Icon and title inline */
+        .info-item-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-item h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .info-item p, .info-item a {
+            margin: 0.25rem 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .info-item a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Form styling improvements - matching courses page */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .required {
+            color: var(--accent-red);
+        }
+
+        /* Consent checkbox in sub-card */
+        .consent-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .consent-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .consent-checkbox input[type="checkbox"] {
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .consent-checkbox label {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        /* Standardize error message spacing - very close to fields */
+        .error-message {
+            margin-top: 0.35rem;
+            font-size: 0.875rem;
+            color: var(--accent-red);
+        }
+
+        /* Remove extra spacing from form groups */
+        .form-group {
+            position: relative;
+        }
+
+        /* Ensure consistent spacing after textarea - match other fields */
+        .form-group textarea + .error-message {
+            margin-top: 0.35rem;
+        }
+
+        /* Ensure consistent spacing after consent card - match other fields */
+        .consent-card + .error-message {
+            margin-top: 0.35rem;
+            margin-bottom: 0;
+        }
+
+        /* Remove bottom margin from consent card to bring error closer */
+        .consent-card {
+            margin-bottom: 0;
+        }
+
+        /* Input fields - matching courses page search bar styling */
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Success message styling */
+        .success-message {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+            border: 1px solid var(--accent-green);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .success-message h3 {
+            color: var(--accent-green);
+            margin: 0 0 0.75rem 0;
+            font-size: 1.5rem;
+        }
+
+        .success-message p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .page-hero {
+                padding-top: 120px !important;
+                padding-bottom: 40px !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5HH2RHZLZ7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5HH2RHZLZ7');
+</script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- NAVIGATION -->
+    <nav id="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo"><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="services">Solutions</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle">Industries <span class="dropdown-arrow">▼</span></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="real-estate">Real Estate and Property Management</a></li>
+                            <li><a href="professional-services">Professional Services</a></li>
+                            <li><a href="financial-services">Financial Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="assessment" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Free Assessment</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span>☰</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Let's <span class="gradient-text">Transform Your Business</span></h1>
+            <p>Book your free AI opportunity assessment or get in touch to discuss your project.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form glass-card">
+                    <h2>Send Us a Message</h2>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <h3>✓ Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
+                    
+                    <form id="contactForm" novalidate>
+                        <!-- CSRF Token -->
+                        <input type="hidden" name="csrf_token" id="csrfToken" value="">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required aria-describedby="firstNameError" aria-invalid="false">
+                                <div class="error-message" id="firstNameError" role="alert">Please enter your first name</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Smith" required aria-describedby="lastNameError" aria-invalid="false">
+                                <div class="error-message" id="lastNameError" role="alert">Please enter your last name</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="your.email@company.com" required aria-describedby="emailError" aria-invalid="false">
+                            <div class="error-message" id="emailError" role="alert">Please enter your email address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required aria-describedby="phoneError" aria-invalid="false">
+                            <div class="error-message" id="phoneError" role="alert">Please enter your phone number</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company <span class="required">*</span></label>
+                            <input type="text" id="company" name="company" placeholder="Your Company Name" required aria-describedby="companyError" aria-invalid="false">
+                            <div class="error-message" id="companyError" role="alert">Please enter your company name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referralSource">How Did You Hear About Us? <span class="required">*</span></label>
+                            <select id="referralSource" name="referralSource" required aria-describedby="referralSourceError" aria-invalid="false">
+                                <option value="">Select an option...</option>
+                                <option value="Search Engine">Search Engine (Google, Bing, etc.)</option>
+                                <option value="YouTube">YouTube</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                                <option value="Referral">Referral from a friend/colleague</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="error-message" id="referralSourceError" role="alert">Please select how you heard about us</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" placeholder="Tell us about your business and how we can help..." required aria-describedby="messageError" aria-invalid="false"></textarea>
+                            <div class="error-message" id="messageError" role="alert">Please enter your message</div>
+                        </div>
+
+                        <!-- GDPR Consent Checkbox -->
+                        <div class="consent-card">
+                            <div class="consent-checkbox">
+                                <input type="checkbox" id="consent" name="consent_marketing" required aria-describedby="consentError" aria-invalid="false">
+                                <label for="consent">
+                                    I agree to receive marketing communications and understand my data will be processed according to the <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>. I can withdraw consent at any time. <span class="required">*</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="error-message" id="consentError" role="alert">You must agree to continue</div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-item-header">
+                            <span class="info-item-icon">📧</span>
+                            <h3>Email</h3>
+                        </div>
+                        <a href="mailto:contact@jmc.com">contact@joshimc.com</a>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-item-header">
+                            <span class="info-item-icon">📞</span>
+                            <h3>Phone</h3>
+                        </div>
+                        <a href="tel:+15551234567">+1 (647) 405-2882</a>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-item-header">
+                            <span class="info-item-icon">🕒</span>
+                            <h3>Business Hours</h3>
+                        </div>
+                        <p>Monday to Friday 9am to 5pm</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">Weekend/holiday availability by appointment only</p>
+                    </div>
+                </div>
+            </div>
+            
+        
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></h3>
+                    <p>Joshi Management Consultancy - Transforming businesses through strategic AI implementation and expert consulting services.</p>
+                    <div class="social-links">
+                     <a href="https://www.linkedin.com/company/joshimc/" aria-label="LinkedIn" target="_blank">in</a>
+                     <a href="https://www.instagram.com/joshiconsulting" aria-label="Instagram" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                         </svg>
+                     </a>
+                     <a href="#" aria-label="YouTube">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                             <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                            </svg>
+                    </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#ai-implementation">AI Implementation</a></li>
+                        <li><a href="services.html#software-implementation">Software Implementation</a></li>
+                        <li><a href="services.html#opportunity-assessment">AI Opportunity Assessment</a></li>
+                        <li><a href="services.html#corporate-training">Corporate Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="blog">Blog</a></li>
+                        <li><a href="courses">Courses</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Data Rights Request</a></li>
+                    </ul>
+                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Joshi Management Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ===== NAVIGATION SCROLL EFFECT =====
+        const nav = document.getElementById('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // ===== MOBILE MENU TOGGLE WITH FOCUS TRAP =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        let lastFocusedElement = null;
+
+        // Get all focusable elements in the menu
+        function getFocusableElements() {
+            return Array.from(navLinks.querySelectorAll(
+                'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            )).filter(el => {
+                return el.offsetParent !== null; // Only visible elements
+            });
+        }
+
+        // Focus trap handler
+        function trapFocus(event) {
+            if (!navLinks.classList.contains('active')) return;
+
+            const focusableElements = getFocusableElements();
+            if (focusableElements.length === 0) return;
+
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            // Tab key
+            if (event.key === 'Tab') {
+                if (event.shiftKey) {
+                    // Shift + Tab
+                    if (document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    // Tab
+                    if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+
+            // Escape key closes menu
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        }
+
+        // Open menu function
+        function openMenu() {
+            // Store the element that had focus before opening
+            lastFocusedElement = document.activeElement;
+
+            navLinks.classList.add('active');
+            mobileMenuBtn.innerHTML = '<span>✕</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+
+            // Add focus trap listener
+            document.addEventListener('keydown', trapFocus);
+
+            // Focus first menu item
+            setTimeout(() => {
+                const focusableElements = getFocusableElements();
+                if (focusableElements.length > 0) {
+                    focusableElements[0].focus();
+                }
+            }, 100); // Small delay to ensure menu is visible
+        }
+
+        // Close menu function
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+            // Remove focus trap listener
+            document.removeEventListener('keydown', trapFocus);
+
+            // Return focus to menu button
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            } else {
+                mobileMenuBtn.focus();
+            }
+        }
+
+        // Toggle menu on button click
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = navLinks.classList.contains('active');
+            if (isActive) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Close mobile menu when clicking a link (but not dropdown toggles)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!link.classList.contains('nav-dropdown-toggle')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (navLinks.classList.contains('active') &&
+                !navLinks.contains(event.target) &&
+                !mobileMenuBtn.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        // ===== INDUSTRIES DROPDOWN =====
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = this.closest('.nav-dropdown');
+                const isOpen = dropdown.classList.contains('open');
+                document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+                if (!isOpen) dropdown.classList.add('open');
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-dropdown')) {
+                document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+            }
+        });
+
+        // ===== FORM VALIDATION & SUBMISSION =====
+        // Form validation is now handled by the InputValidator framework
+        // See: /js/form-validator.js and /js/contact-form-init.js (loaded at bottom of page)
+        // Old inline validation code removed to eliminate redundancy (Feb 2026)
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // ===== OPTIMIZED MOUSE-REACTIVE SHADER =====
+        // Uses CSS custom properties instead of recreating style elements (60x/sec performance gain)
+        (function() {
+            let mouseX = 0.5;
+            let mouseY = 0.5;
+            let targetX = 0.5;
+            let targetY = 0.5;
+            let isActive = true;
+            let animationFrame = null;
+
+            // Disable on mobile/touch devices to save battery
+            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+                return;
+            }
+
+            // Get document root for CSS custom properties
+            const root = document.documentElement;
+
+            // Smooth animation using lerp (linear interpolation)
+            function lerp(start, end, factor) {
+                return start + (end - start) * factor;
+            }
+
+            // Track mouse movement (throttled to 60fps max)
+            let lastUpdate = 0;
+            document.addEventListener('mousemove', (e) => {
+                const now = Date.now();
+                if (now - lastUpdate < 16) return; // ~60fps throttle
+                lastUpdate = now;
+
+                targetX = e.clientX / window.innerWidth;
+                targetY = e.clientY / window.innerHeight;
+            });
+
+            // Pause animation when user is idle (3 seconds)
+            let idleTimer;
+            function resetIdleTimer() {
+                isActive = true;
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(() => {
+                    isActive = false;
+                }, 3000);
+            }
+
+            document.addEventListener('mousemove', resetIdleTimer);
+            document.addEventListener('scroll', resetIdleTimer);
+            resetIdleTimer();
+
+            // Update shader animation
+            function updateShader() {
+                if (isActive) {
+                    // Smoothly interpolate current position towards target
+                    mouseX = lerp(mouseX, targetX, 0.1);
+                    mouseY = lerp(mouseY, targetY, 0.1);
+
+                    // Convert to percentage for CSS
+                    const x1 = Math.round(mouseX * 100) + '%';
+                    const y1 = Math.round(mouseY * 100) + '%';
+
+                    // Second gradient follows with inverted offset
+                    const x2 = Math.round((1 - mouseX) * 100) + '%';
+                    const y2 = Math.round((1 - mouseY) * 100) + '%';
+
+                    // Update CSS custom properties (much faster than recreating style elements)
+                    root.style.setProperty('--mouse-x', x1);
+                    root.style.setProperty('--mouse-y', y1);
+                    root.style.setProperty('--mouse-x-inv', x2);
+                    root.style.setProperty('--mouse-y-inv', y2);
+                }
+
+                animationFrame = requestAnimationFrame(updateShader);
+            }
+
+            // Start the shader animation
+            updateShader();
+
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+            });
+        })();
+
+       // ===== YOUTUBE MODAL =====
+document.addEventListener('DOMContentLoaded', function() {
+    const youtubeModal = document.getElementById('youtubeModal');
+    const closeModal = document.getElementById('closeModal');
+    const youtubeSubscribeForm = document.getElementById('youtubeSubscribeForm');
+    const youtubeSuccessMessage = document.getElementById('youtubeSuccessMessage');
+
+    // Check if modal exists (it should)
+    if (!youtubeModal) {
+        console.error('YouTube modal not found');
+        return;
+    }
+
+    // Find all YouTube social links
+    const youtubeLinks = document.querySelectorAll('a[aria-label="YouTube"]');
+    youtubeLinks.forEach(link => {
+        link.onclick = function(e) {
+            e.preventDefault();
+            youtubeModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        };
+    });
+
+    // Close modal
+    closeModal.onclick = function() {
+        youtubeModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target == youtubeModal) {
+            youtubeModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    // Handle form submission
+    youtubeSubscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('youtubeEmail').value;
+        const submitBtn = youtubeSubscribeForm.querySelector('button[type="submit"]');
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Subscribing...';
+        
+        const formData = new FormData();
+        formData.append('email', email);
+        
+        fetch('php/youtube_subscribe.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success message
+                youtubeSubscribeForm.style.display = 'none';
+                youtubeSuccessMessage.style.display = 'block';
+                
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    youtubeModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    
+                    // Reset form for next time
+                    setTimeout(() => {
+                        youtubeSubscribeForm.style.display = 'block';
+                        youtubeSuccessMessage.style.display = 'none';
+                        youtubeSubscribeForm.reset();
+                    }, 500);
+                }, 3000);
+            } else {
+                alert(data.message);
+            }
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Subscribe for Updates';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Subscribe for Updates';
+        });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && youtubeModal.style.display === 'block') {
+            youtubeModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+    </script>
+<!-- YouTube Subscribe Modal -->
+<div id="youtubeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content glass-card">
+        <button class="modal-close" id="closeModal" aria-label="Close dialog"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16" style="color: #FF0000;" aria-hidden="true">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            </svg>
+            <h2 id="modalTitle" style="margin-top: 1.5rem;">YouTube Channel Coming Soon!</h2>
+        </div>
+        <p style="margin: 1.5rem 0; font-size: 1.125rem; line-height: 1.6;">
+            We're launching our YouTube channel with exclusive AI tutorials, case studies, and industry insights. Be the first to know when we go live!
+        </p>
+        
+        <div id="youtubeSuccessMessage" class="modal-success" style="display: none;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+            <h3 style="color: var(--accent-green); margin-bottom: 0.5rem;">You're Subscribed!</h3>
+            <p>We'll send you an email as soon as our channel launches.</p>
+        </div>
+        
+        <form id="youtubeSubscribeForm" class="modal-form">
+            <input
+                type="email"
+                name="email"
+                id="youtubeEmail"
+                placeholder="Enter your email address"
+                aria-label="Email address for YouTube channel launch notifications"
+                required
+                style="width: 100%; padding: 1rem 1.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; color: white; font-size: 1rem; font-family: var(--font-body); margin-bottom: 1.5rem;"
+            >
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" aria-label="Subscribe for YouTube channel launch updates">
+                Subscribe for Updates
+            </button>
+        </form>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted); text-align: center;">
+            🔒 We respect your privacy. Unsubscribe anytime.
+        </p>
+    </div>
+</div>
+    <script src="/js/form-validator.js"></script>
+    <script src="/js/contact-form-init.js"></script>
+    <script src="/js/fetch-retry.js"></script>
+    <script src="/js/cookie-consent.min.js"></script>
+</body>
+</html>

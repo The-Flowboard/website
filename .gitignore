@@ -1,0 +1,67 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# SFTP credentials
+.vscode/sftp.json
+
+# Composer
+vendor/
+composer.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+*.backup2
+*.backup_*
+
+# Debug/check scripts
+check_*.php
+
+# Docker
+.env.docker.local
+
+# Expect scripts (contain SSH/SFTP credentials)
+*.exp
+
+# Root-level screenshots and binary artifacts
+/favicon.ico
+/favicon.png
+/og-image.jpg
+/logo.png
+/*.png
+/*.jpg
+
+# Blog images (user-uploaded, not source code)
+images/blog/*.jpg
+images/blog/*.jpeg
+images/blog/*.png
+images/blog/*.webp
+
+# Duplicate schema files in root (canonical versions are in database/)
+ai_assessment_schema.sql
+contact_form_schema.sql
+
+# n8n workflow configs (contain API keys)
+n8n/
+
+# Misc one-off scripts and notes
+*.txt
+*.py
+fix_all_permissions.exp
+n8n_*.js
+n8n_*.md
+extract_css.py

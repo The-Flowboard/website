@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^5.3",
+        "vlucas/phpdotenv": "^5.5",
+        "ezyang/htmlpurifier": "^4.16"
+    }
+}

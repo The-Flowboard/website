@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI and automation solutions for law firms, accounting practices, and consulting companies. Automate document review, client intake, knowledge management, and reporting.">
+    <meta name="keywords" content="AI law firms, accounting automation, consulting AI, document review automation, client intake automation, knowledge management AI, professional services technology">
+    <meta name="author" content="Joshi Management Consultancy">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>AI Solutions for Professional Services | Joshi Management Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Sora:wght@600;700;800&display=swap&subset=latin" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-hero {
+            padding-top: 140px !important;
+            padding-bottom: 60px !important;
+        }
+        .page-hero h1 { margin-bottom: 1.5rem; }
+        .page-hero .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .page-hero .hero-buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+        .industry-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(147, 51, 234, 0.15);
+            border: 1px solid rgba(147, 51, 234, 0.35);
+            border-radius: 30px;
+            padding: 0.4rem 1.1rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #c084fc;
+            margin-bottom: 1.5rem;
+        }
+
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pain-card { position: relative; }
+        .pain-number {
+            font-family: var(--font-display);
+            font-size: 2.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .pain-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; color: white; }
+        .pain-card p { color: var(--text-secondary); font-size: 0.925rem; line-height: 1.75; margin: 0; }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+        }
+        .solutions-grid > *:nth-child(1) { grid-column: 1 / 3; }
+        .solutions-grid > *:nth-child(2) { grid-column: 3 / 5; }
+        .solutions-grid > *:nth-child(3) { grid-column: 5 / 7; }
+        .solutions-grid > *:nth-child(4) { grid-column: 2 / 4; }
+        .solutions-grid > *:nth-child(5) { grid-column: 4 / 6; }
+        .solution-icon { font-size: 2.25rem; margin-bottom: 1.25rem; display: block; }
+        .solution-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: white; }
+        .solution-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75; margin: 0; }
+
+        .before-after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .before-card {
+            border-color: rgba(239, 68, 68, 0.3) !important;
+            background: rgba(239, 68, 68, 0.04) !important;
+        }
+        .after-card {
+            border-color: rgba(16, 185, 129, 0.3) !important;
+            background: rgba(16, 185, 129, 0.04) !important;
+        }
+        .ba-label {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .before-card .ba-label { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+        .after-card .ba-label { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .ba-list { list-style: none; padding: 0; margin: 0; }
+        .ba-list li {
+            padding: 0.65rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+        .ba-list li:last-child { border-bottom: none; }
+        .ba-icon { flex-shrink: 0; margin-top: 2px; font-style: normal; }
+        .before-card .ba-icon { color: #f87171; }
+        .after-card .ba-icon { color: #34d399; }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+        }
+        .use-cases-grid > *:nth-child(1) { grid-column: 1 / 3; }
+        .use-cases-grid > *:nth-child(2) { grid-column: 3 / 5; }
+        .use-cases-grid > *:nth-child(3) { grid-column: 5 / 7; }
+        .use-cases-grid > *:nth-child(4) { grid-column: 2 / 4; }
+        .use-cases-grid > *:nth-child(5) { grid-column: 4 / 6; }
+        .use-case-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+        .use-case-card h3 { font-size: 1.05rem; margin-bottom: 0.75rem; color: white; }
+        .use-case-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem; }
+        .impact-tag {
+            display: inline-block;
+            padding: 0.35rem 0.9rem;
+            background: rgba(147, 51, 234, 0.12);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            border-radius: 20px;
+            font-size: 0.78rem;
+            color: #c084fc;
+            font-weight: 600;
+            font-family: var(--font-display);
+        }
+
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+        .tech-tag {
+            padding: 0.5rem 1.25rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+        .tech-tag:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white; }
+
+        .cta-box {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.15), rgba(255, 113, 48, 0.1));
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            border-radius: 24px;
+            padding: 5rem 3rem;
+        }
+        .cta-box h2 { margin-bottom: 1.25rem; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+        .cta-box p { color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.05rem; line-height: 1.7; }
+
+        .eyebrow {
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+            .solutions-grid > * { grid-column: auto !important; }
+            .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
+            .use-cases-grid > * { grid-column: auto !important; }
+        }
+        @media (max-width: 768px) {
+            .before-after-grid { grid-template-columns: 1fr; }
+            .solutions-grid { grid-template-columns: 1fr; }
+            .solutions-grid > * { grid-column: auto !important; }
+            .use-cases-grid { grid-template-columns: 1fr; }
+            .use-cases-grid > * { grid-column: auto !important; }
+            .cta-box { padding: 3rem 1.5rem; }
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HH2RHZLZ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5HH2RHZLZ7');
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- NAVIGATION -->
+    <nav id="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo"><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="services">Solutions</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle">Industries <span class="dropdown-arrow">▼</span></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="real-estate">Real Estate and Property Management</a></li>
+                            <li><a href="professional-services">Professional Services</a></li>
+                            <li><a href="financial-services">Financial Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="assessment" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Free Assessment</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span>☰</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- HERO -->
+    <section class="page-hero section">
+        <div class="container">
+            <div class="industry-badge">⚖️ Professional Services</div>
+            <h1>AI Solutions for <span class="gradient-text">Law Firms, Accounting Practices, and Consulting Companies</span></h1>
+            <p class="hero-subtitle">Professional services firms sell expertise, not hours. Yet most firms have their highest-paid people spending significant time on document review, data entry, and administrative coordination. We build AI and automation solutions that handle the repetitive work so your team can focus on the advisory and strategic work clients actually pay for.</p>
+            <div class="hero-buttons">
+                <a href="contact" class="btn btn-primary">Book a Free Consultation</a>
+                <a href="services" class="btn btn-secondary">See Our Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">The Challenge</span>
+                <h2>Where High-Value Firms Lose Time and Money</h2>
+                <p>The operational friction that keeps your best people from doing their best work.</p>
+            </div>
+            <div class="pain-grid">
+                <div class="glass-card pain-card">
+                    <div class="pain-number">01</div>
+                    <h3>High-Cost Talent on Low-Value Work</h3>
+                    <p>Associates, analysts, and junior staff spend 30 to 50% of their time on tasks that do not require their education or expertise: reviewing documents, reconciling data, formatting reports, and chasing down information. That is expensive labor being used for work AI can do faster and more accurately.</p>
+                </div>
+                <div class="glass-card pain-card">
+                    <div class="pain-number">02</div>
+                    <h3>Knowledge Trapped in People's Heads</h3>
+                    <p>Precedents, past work product, and institutional knowledge are scattered across shared drives, email inboxes, and individual hard drives. When a senior partner or experienced consultant leaves, their knowledge walks out the door. New team members waste hours searching for templates, prior analyses, and reference materials.</p>
+                </div>
+                <div class="glass-card pain-card">
+                    <div class="pain-number">03</div>
+                    <h3>Client Intake and Onboarding Bottlenecks</h3>
+                    <p>Getting a new client from first contact to active engagement involves multiple handoffs: intake forms, conflict checks, engagement letters, system setup, and team assignment. Each step is often manual, creating delays that frustrate clients and slow revenue recognition.</p>
+                </div>
+                <div class="glass-card pain-card">
+                    <div class="pain-number">04</div>
+                    <h3>Compliance and Regulatory Pressure</h3>
+                    <p>Whether it is legal compliance, accounting standards, or financial regulations, professional services firms face increasing documentation and reporting requirements. Manual compliance processes are error-prone, time-consuming, and a constant source of risk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Our Approach</span>
+                <h2>AI Solutions Mapped to Professional Services Workflows</h2>
+                <p>Every JMC solution applied specifically to how law firms, accounting practices, and consulting companies operate.</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="glass-card solution-card">
+                    <span class="solution-icon">🤖</span>
+                    <h3>AI Business Solutions</h3>
+                    <p>AI-powered document review that reads, compares, and flags issues across hundreds of contracts, filings, or financial documents in the time it takes a junior associate to review one. Automated report generation that pulls data from multiple sources and produces client-ready deliverables. Intelligent research tools that surface relevant precedents, regulations, and reference materials in seconds.</p>
+                </div>
+                <div class="glass-card solution-card">
+                    <span class="solution-icon">🔗</span>
+                    <h3>Unified CRM and Practice Management</h3>
+                    <p>We integrate your practice management platform (Clio, PracticePanther, Thomson Reuters), accounting software (QuickBooks, Xero, Sage), CRM, and communication tools into a unified system. Client data, matter history, billing records, and communication logs are connected and accessible, eliminating the fragmentation that slows your team down.</p>
+                </div>
+                <div class="glass-card solution-card">
+                    <span class="solution-icon">💻</span>
+                    <h3>Custom Applications</h3>
+                    <p>Client portals with secure document sharing, real-time matter status, and automated updates. Internal knowledge management systems that index your firm's entire document history and make it searchable in natural language. Custom billing and time-tracking tools that integrate with your existing practice management software.</p>
+                </div>
+                <div class="glass-card solution-card">
+                    <span class="solution-icon">🧠</span>
+                    <h3>Agentic AI</h3>
+                    <p>Agents that manage the full client intake process: capture information from a web form, run conflict checks against your database, generate an engagement letter from templates, route for partner approval, and set up the matter in your practice management system. Agents that monitor regulatory changes in your practice areas and flag updates that affect active client matters.</p>
+                </div>
+                <div class="glass-card solution-card">
+                    <span class="solution-icon">📊</span>
+                    <h3>Predictive Analytics</h3>
+                    <p>Client profitability analysis that identifies which engagements generate the highest margins and which ones are quietly losing money. Workload forecasting that predicts busy periods based on historical patterns so you can staff proactively. Pipeline analytics that score prospects and predict conversion likelihood based on historical win/loss data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">The Transformation</span>
+                <h2>Before and After AI</h2>
+                <p>What changes when your firm's operations run on intelligent automation.</p>
+            </div>
+            <div class="before-after-grid">
+                <div class="glass-card before-card">
+                    <div class="ba-label">Before</div>
+                    <ul class="ba-list">
+                        <li><i class="ba-icon">✗</i> Junior associates spending 40+ hours reviewing contracts for a single due diligence project</li>
+                        <li><i class="ba-icon">✗</i> Client intake requiring 3 to 5 manual handoffs before an engagement letter is generated</li>
+                        <li><i class="ba-icon">✗</i> Finding a relevant precedent or past work product takes hours of searching shared drives</li>
+                        <li><i class="ba-icon">✗</i> Accountants manually reconciling 2,000+ transactions during tax season</li>
+                        <li><i class="ba-icon">✗</i> Partners tracking business development in spreadsheets with no pipeline visibility</li>
+                    </ul>
+                </div>
+                <div class="glass-card after-card">
+                    <div class="ba-label">After</div>
+                    <ul class="ba-list">
+                        <li><i class="ba-icon">✓</i> AI reviews and flags key clauses, risks, and discrepancies across 500+ documents in hours</li>
+                        <li><i class="ba-icon">✓</i> Automated intake captures data, runs conflicts, and generates engagement letters from one submission</li>
+                        <li><i class="ba-icon">✓</i> AI indexes your document history and returns relevant results with a natural language search in seconds</li>
+                        <li><i class="ba-icon">✓</i> AI matches, categorizes, and reconciles transactions automatically, flagging only the exceptions</li>
+                        <li><i class="ba-icon">✓</i> CRM with pipeline analytics shows deal stages, conversion rates, and revenue forecasts in real time</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Featured Use Cases</span>
+                <h2>What We Build for Professional Services Firms</h2>
+                <p>Concrete AI implementations with measurable outcomes that free your team to do the work clients pay for.</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="glass-card use-case-card">
+                    <span class="use-case-icon">📄</span>
+                    <h3>AI-Powered Document Review and Analysis</h3>
+                    <p>AI reads, compares, and flags issues across contracts, filings, and financial documents at scale. Junior staff review only the flagged sections rather than reading every page.</p>
+                    <span class="impact-tag">50–70% reduction in document review time</span>
+                </div>
+                <div class="glass-card use-case-card">
+                    <span class="use-case-icon">⚡</span>
+                    <h3>Automated Client Intake and Conflict Checking</h3>
+                    <p>A single online form captures client information, triggers automated conflict checks against your database, generates a draft engagement letter using firm templates, and routes everything for partner review and approval.</p>
+                    <span class="impact-tag">Intake processing time reduced from days to hours</span>
+                </div>
+                <div class="glass-card use-case-card">
+                    <span class="use-case-icon">🗂️</span>
+                    <h3>Firm Knowledge Management</h3>
+                    <p>AI indexes every document, memo, brief, analysis, and email in your firm's history and makes it searchable in natural language. Associates find relevant precedents and past work product in seconds instead of hours.</p>
+                    <span class="impact-tag">Research time reduced by 60–80%</span>
+                </div>
+                <div class="glass-card use-case-card">
+                    <span class="use-case-icon">💰</span>
+                    <h3>Financial Reporting Automation</h3>
+                    <p>Automated bank reconciliation, trial balance preparation, and anomaly detection for accounting firms. AI matches transactions, categorizes them, and flags only the exceptions that require human judgment.</p>
+                    <span class="impact-tag">30–40% workload reduction during busy season</span>
+                </div>
+                <div class="glass-card use-case-card">
+                    <span class="use-case-icon">📝</span>
+                    <h3>Proposal and RFP Generation</h3>
+                    <p>AI assembles tailored proposals from your past work, team bios, case studies, and service descriptions. Partners review and personalize a first draft rather than building from scratch each time.</p>
+                    <span class="impact-tag">Proposal time reduced from 4–6 hours to under 1 hour</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section class="section">
+        <div class="container">
+            <div class="glass-card">
+                <span class="eyebrow">Technology Compatibility</span>
+                <h2 style="margin-bottom: 1rem; font-size: clamp(1.4rem, 2.5vw, 2rem);">Integrated With the Platforms Your Firm Already Uses</h2>
+                <p style="color: var(--text-secondary); line-height: 1.7; max-width: 800px;">We integrate with the platforms professional services firms rely on. Our solutions use large language models, intelligent document processing, and workflow automation—deployed securely on cloud infrastructure with compliance and data privacy built in.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Clio</span>
+                    <span class="tech-tag">PracticePanther</span>
+                    <span class="tech-tag">Thomson Reuters</span>
+                    <span class="tech-tag">QuickBooks</span>
+                    <span class="tech-tag">Xero</span>
+                    <span class="tech-tag">Sage</span>
+                    <span class="tech-tag">Salesforce</span>
+                    <span class="tech-tag">HubSpot</span>
+                    <span class="tech-tag">Microsoft 365</span>
+                    <span class="tech-tag">Google Workspace</span>
+                    <span class="tech-tag">Custom Internal Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Your Team's Expertise Is Too Valuable for <span class="gradient-text">Data Entry.</span> Let AI Handle the Rest.</h2>
+                <p>Take our free AI Readiness Assessment and see exactly where AI can reduce your team's administrative burden, with projected time savings and a clear implementation plan.</p>
+                <a href="assessment" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.1rem 2.75rem;">Take the Free Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="logo.png" alt="Joshi Management Consultancy" width="70" height="70"></h3>
+                    <p>Joshi Management Consultancy - Transforming businesses through strategic AI implementation and intelligent automation.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/joshimc/" aria-label="LinkedIn" target="_blank">in</a>
+                        <a href="https://www.instagram.com/joshiconsulting" aria-label="Instagram" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="services#ai-implementation">AI Implementation</a></li>
+                        <li><a href="services#software-implementation">Software Implementation</a></li>
+                        <li><a href="services#opportunity-assessment">AI Opportunity Assessment</a></li>
+                        <li><a href="services#corporate-training">Corporate Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="blog">Blog</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Data Rights Request</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Joshi Management Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.pageYOffset > 50));
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        let lastFocusedElement = null;
+
+        function getFocusableElements() {
+            return Array.from(navLinks.querySelectorAll('a[href], button:not([disabled])')).filter(el => el.offsetParent !== null);
+        }
+
+        function trapFocus(event) {
+            if (!navLinks.classList.contains('active')) return;
+            const els = getFocusableElements();
+            if (!els.length) return;
+            if (event.key === 'Tab') {
+                if (event.shiftKey && document.activeElement === els[0]) { event.preventDefault(); els[els.length - 1].focus(); }
+                else if (!event.shiftKey && document.activeElement === els[els.length - 1]) { event.preventDefault(); els[0].focus(); }
+            }
+            if (event.key === 'Escape') closeMenu();
+        }
+
+        function openMenu() {
+            lastFocusedElement = document.activeElement;
+            navLinks.classList.add('active');
+            mobileMenuBtn.innerHTML = '<span>✕</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            document.addEventListener('keydown', trapFocus);
+            setTimeout(() => { const els = getFocusableElements(); if (els.length) els[0].focus(); }, 100);
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<span>☰</span>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.removeEventListener('keydown', trapFocus);
+            if (lastFocusedElement) lastFocusedElement.focus(); else mobileMenuBtn.focus();
+        }
+
+        mobileMenuBtn.addEventListener('click', () => navLinks.classList.contains('active') ? closeMenu() : openMenu());
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => { if (!link.classList.contains('nav-dropdown-toggle')) closeMenu(); });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) closeMenu();
+        });
+
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                const dropdown = this.closest('.nav-dropdown');
+                const isOpen = dropdown.classList.contains('open');
+                document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+                if (!isOpen) dropdown.classList.add('open');
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
