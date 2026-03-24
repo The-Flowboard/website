@@ -11,7 +11,7 @@
 **Automation:** n8n at `https://n8n.joshimc.com`
 **Server:** Ubuntu/Apache · Git + GitHub Actions CI/CD · `/var/www/html/`
 **Local Dev:** Docker (PHP 7.4 + MySQL 8.0) at `http://localhost:8080`
-**Dependencies:** PHPOffice/PhpSpreadsheet ^5.3 (Composer) · Google Fonts CDN · Font Awesome 6.4.0 CDN · GA4 `G-5HH2RHZLZ7`
+**Dependencies:** PHPOffice/PhpSpreadsheet ^1.29 (Composer) · Google Fonts CDN · Font Awesome 6.4.0 CDN · GA4 `G-5HH2RHZLZ7`
 
 ---
 
