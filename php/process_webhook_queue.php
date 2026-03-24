@@ -5,7 +5,7 @@
  *
  * Purpose: Background processor for webhook queue
  * Runs: Every 5 minutes via cron
- * Command: */5 * * * * php /var/www/html/php/process_webhook_queue.php >> /var/log/jmc_webhooks.log 2>&1
+ * Command: * /5 * * * * php /var/www/html/php/process_webhook_queue.php >> /var/log/jmc_webhooks.log 2>&1
  *
  * @author JMC Development Team
  * @created January 30, 2026
