@@ -93,6 +93,7 @@ jobs:
             --exclude='scripts/'
             --exclude='CLAUDE.md'
             --exclude='*.sh'
+            --exclude='images/blog/'
           path: ./
           remote_path: /var/www/html/
           remote_host: ${{ secrets.DEPLOY_HOST }}
