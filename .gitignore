@@ -38,10 +38,7 @@ check_*.php
 
 # Root-level screenshots and binary artifacts
 /favicon.ico
-/favicon.png
 /og-image.jpg
-/logo.png
-/*.png
 /*.jpg
 
 # Blog images (user-uploaded, not source code)
