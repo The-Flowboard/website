@@ -40,15 +40,11 @@
             --blog-fallback-gradient: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
         }
 
-        /* Add spacing between hero and first section for better visual cohesion */
-        .hero + .section {
-            padding-top: 250px !important;
-        }
-
-        /* Add 50px padding after hero section */
+        /* Hero: clear the fixed nav (~118px) and give breathing room below */
         .hero {
-            padding-bottom: 50px !important;
-            margin-bottom: -320px !important;
+            padding-top: 140px !important;
+            padding-bottom: 80px !important;
+            margin-bottom: 0 !important;
         }
 
         /* Reduce padding after "Our Services" section (section 2) */

@@ -8,6 +8,7 @@
             --accent-purple-dark: #872b97; /* Darker purple for gradients/shadows */
             --accent-cyan: #ff7130;        /* Bright orange */
             --accent-blue: #ff3c68;        /* Hot pink */
+            --accent-green: #10b981;       /* Emerald green */
             --glass-white: rgba(255, 255, 255, 0.1);
             --glass-white-hover: rgba(255, 255, 255, 0.15);
             --text-primary: #ffffff;
